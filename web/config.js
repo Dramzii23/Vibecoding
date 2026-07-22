@@ -24,7 +24,7 @@ const config = {
   app: {
     name: "Vibecoding",
     description:
-      "Boilerplate AI-native para founders. Construido para el curso de Remotto × Startup Chihuahua.",
+      "Plantilla del curso Vibe Code con Change and Code. Publica tu landing y usa la IA para construir tu negocio.",
     domain: "vibecoding.dev", // sin https://, sin www
     locale: "es", // "es" | "en"
     // URL pública: usa NEXT_PUBLIC_APP_URL en .env. En este config solo definimos el default.
@@ -114,137 +114,114 @@ const config = {
       { label: "Docs", href: "/docs" },
     ],
     hero: {
-      eyebrow: "Curso Vibecoding · Remotto × Startup Chihuahua",
-      title: "De 0 a producto AI-native en 11 semanas.",
+      eyebrow: "Curso Vibe Code · Change and Code",
+      title: "Publica tu landing y ponle IA a tu negocio.",
       subtitle:
-        "Vibecoding es la plantilla del curso: Next.js, Supabase y OpenAI cableados desde el día 1. Tú extiendes con prompts.",
-      cta: { label: "Únete al waitlist", href: "#waitlist" },
+        "Esta plantilla es tu punto de partida en el curso: página lista para publicar, captura de leads y IA integrada. Tú la haces tuya describiendo lo que quieres — la IA escribe el código.",
+      cta: { label: "Apúntate a la lista", href: "#waitlist" },
       ctaSecondary: { label: "Ver docs", href: "/docs" },
     },
     problem: {
       eyebrow: "El problema",
-      title: "Construir el andamiaje mata tu momentum.",
+      title: "Tu negocio necesita presencia digital, no un título en sistemas.",
       subtitle:
-        "La mayoría de founders se atoran semanas configurando lo mismo antes de tocar su idea real.",
+        "La mayoría de los emprendedores se quedan fuera de lo digital por creer que es caro o complicado.",
       items: [
         {
           icon: "Timer",
-          title: "Semanas en boilerplate",
-          body: "Auth, base de datos, deploy, emails… configuras lo mismo que todos antes de validar nada.",
+          title: "Meses cotizando",
+          body: "Una página 'profesional' te la cotizan cara y tarda meses. Mientras, tus clientes te buscan y no te encuentran.",
         },
         {
           icon: "Puzzle",
-          title: "Parálisis por herramientas",
-          body: "Cada capa tiene 10 opciones. Comparas en vez de construir y pierdes el hilo.",
+          title: "Herramientas que abruman",
+          body: "Dominio, hosting, base de datos… cada término suena a otro idioma y nadie te lo explica en simple.",
         },
         {
           icon: "PlugZap",
-          title: "La IA no se integra sola",
-          body: "Structured outputs, tool use y agentes suenan bien hasta que hay que cablearlos.",
+          title: "La IA cambió las reglas",
+          body: "Hoy puedes construirlo tú, describiendo lo que necesitas en español. Solo te falta la base correcta.",
         },
       ],
     },
     features: {
       eyebrow: "Lo que ya viene listo",
-      title: "Stack completo, una sola decisión por capa.",
-      subtitle: "No pierdes tiempo eligiendo herramientas. Te enfocas en tu producto.",
+      title: "Todo lo del curso, ya cableado.",
+      subtitle: "Tú te enfocas en tu negocio; la plantilla pone la parte técnica.",
       items: [
         {
-          icon: "Sparkles",
-          title: "AI nativa",
-          body: "OpenAI con structured outputs, tool use y agentes con LangGraph. Listo para activar.",
+          icon: "Rocket",
+          title: "Landing lista para publicar",
+          body: "Edita config.js con los textos de tu negocio y tienes página propia con URL pública.",
+        },
+        {
+          icon: "Users",
+          title: "Leads sin hojas de cálculo",
+          body: "Formulario de registro + panel /admin para ver a cada interesado, con fecha y fuente.",
         },
         {
           icon: "Database",
-          title: "Supabase + Auth",
-          body: "Base de datos con RLS, Google Auth y tablas pre-modeladas. No diseñas schema desde cero.",
-        },
-        {
-          icon: "Zap",
-          title: "Deploy en minutos",
-          body: "Vercel + Supabase Cloud. Una URL pública el primer día.",
-        },
-        {
-          icon: "BookOpen",
-          title: "Docs semana a semana",
-          body: "Tutoriales mapeados al temario del curso, con prompts de Cursor listos para copiar.",
+          title: "Base de datos + login",
+          body: "Supabase con tablas pre-modeladas, seguridad RLS y entrada con Google. Sin diseñar nada desde cero.",
         },
         {
           icon: "Mail",
-          title: "Email + analytics",
-          body: "Resend para correos transaccionales y PostHog opcional para tracking.",
+          title: "Emails automáticos",
+          body: "Resend manda la bienvenida y los avisos de tu negocio por ti.",
+        },
+        {
+          icon: "Sparkles",
+          title: "IA integrada",
+          body: "Chat con tus datos, tool use y structured outputs listos para activar cuando los necesites.",
+        },
+        {
+          icon: "Bot",
+          title: "Agentes (opcional)",
+          body: "Si tu negocio tiene tareas de varios pasos, trae agentes LangGraph para que la IA trabaje sola.",
         },
       ],
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      title: "Lo que todo founder pregunta antes de arrancar.",
+      title: "Lo que todos preguntan antes de arrancar.",
       items: [
         {
           q: "¿Necesito saber programar?",
-          a: "No. El curso asume founders no técnicos. Construyes describiendo en Cursor; el boilerplate hace el resto.",
+          a: "No. El curso asume emprendedores no técnicos. Construyes describiéndole a la IA lo que quieres; la plantilla hace el resto.",
         },
         {
           q: "¿Cuánto cuesta correr esto?",
-          a: "Vercel y Supabase tienen tiers gratuitos generosos. OpenAI cobra por uso: con gpt-4o-mini, el costo de un MVP del curso ronda US$5-20.",
+          a: "Vercel y Supabase tienen planes gratuitos generosos. OpenAI cobra por uso: con gpt-4o-mini, el costo de un MVP del curso ronda US$5-20.",
         },
         {
           q: "¿Puedo cambiar el stack?",
-          a: "Sí, pero el curso (y las docs) asumen este stack. Cambiar pieza por pieza es posible después del curso.",
+          a: "Sí, pero las docs asumen este stack. Cambiar pieza por pieza es posible cuando termines el curso.",
         },
         {
           q: "¿Y si me atoro?",
-          a: "Las docs incluyen una sección de troubleshooting con los 20 errores más comunes. Además hay sesión semanal con el docente.",
-        },
-      ],
-    },
-    socialProof: {
-      text: "Founders del curso ya lanzaron con este stack",
-      logos: ["Remotto", "Startup Chihuahua", "Next.js", "Supabase", "OpenAI", "Vercel"],
-    },
-    testimonials: {
-      eyebrow: "Prueba social",
-      title: "Founders que ya lanzaron con Vibecoding.",
-      subtitle: "Testimonios de cohortes anteriores del curso.",
-      items: [
-        {
-          quote:
-            "Pasé de una idea en Notion a un MVP con IA en producción en dos semanas. Nunca había tocado código.",
-          author: "Ana Márquez",
-          role: "Founder · Fisio en casa",
-        },
-        {
-          quote:
-            "El boilerplate ya traía auth, base de datos y el agente cableados. Solo describí lo que quería en Cursor.",
-          author: "Diego Sáenz",
-          role: "Founder · Tutor IA",
-        },
-        {
-          quote:
-            "Las docs semana a semana fueron mi mapa. Copiaba el prompt, ajustaba y avanzaba sin atorarme.",
-          author: "Lucía Fernández",
-          role: "Founder · Recetario inteligente",
+          a: "Las docs incluyen una sección de troubleshooting con los 20 errores más comunes. Además tienes las sesiones del curso para preguntar.",
         },
       ],
     },
     finalCta: {
       eyebrow: "Tu turno",
-      title: "Deja de configurar. Empieza a construir.",
+      title: "Deja de posponerlo. Publica tu negocio.",
       subtitle:
-        "Clona la plantilla, edita config.js y ten tu producto AI-native en producción esta semana.",
-      cta: { label: "Únete al waitlist", href: "#waitlist" },
+        "Edita config.js con los datos de tu negocio, describe lo que quieres y ten tu página en línea esta misma semana.",
+      cta: { label: "Apúntate a la lista", href: "#waitlist" },
       ctaSecondary: { label: "Leer las docs", href: "/docs" },
     },
     waitlist: {
       eyebrow: "Únete primero",
       title: "Sé de los primeros en saber.",
-      subtitle: "Te avisamos cuando abramos cupos para la siguiente cohorte.",
+      subtitle: "Déjanos tu correo y te avisamos cuando esto arranque.",
       successMessage: "¡Listo! Te avisamos en cuanto haya novedades.",
       buttonLabel: "Quiero entrar",
       placeholder: "tu@email.com",
     },
     footer: {
-      tagline: "Construido para founders. Por Remotto × Startup Chihuahua.",
+      tagline:
+        "Hecho por Pedro Gutiérrez (Roni) para el curso Vibe Code · Change and Code × Startup Chihuahua.",
       columns: [
         {
           title: "Producto",
@@ -266,7 +243,7 @@ const config = {
           title: "Comunidad",
           links: [
             { label: "GitHub", href: "https://github.com/RoniHY/Vibecoding", external: true },
-            { label: "Remotto", href: "https://remotto.com", external: true },
+            { label: "Change and Code", href: "https://changeandcode.com", external: true },
           ],
         },
       ],

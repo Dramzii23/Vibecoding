@@ -1,6 +1,6 @@
 # Vibecoding
 
-Boilerplate para el **Curso de Vibecoding Remotto × Startup Chihuahua** (11 semanas, 29 jun – 7 sep 2026).
+Plantilla del **curso Vibe Code con Change and Code × Startup Chihuahua** (9 semanas). Hecha por Pedro Gutiérrez (Roni).
 
 Construido para founders mayormente no técnicos con 4 horas semanales: arrancas con una plantilla lista y la extiendes semana a semana hasta llegar a Demo Day con un producto AI-native funcional.
 
