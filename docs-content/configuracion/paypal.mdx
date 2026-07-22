@@ -1,6 +1,6 @@
 ---
 title: PayPal (PayPal.me)
-description: Cobra con un enlace de PayPal.me sin configurar Stripe.
+description: Cobra con un enlace de PayPal.me — sin pasarela de pago que configurar.
 order: 7
 ---
 
@@ -36,10 +36,9 @@ import PaymentButton from "@/components/landing/PaymentButton"
 
 Si `features.paypal` está apagado o falta el usuario, el botón no renderiza nada.
 
-## Diferencia con `features.payments` (Stripe)
+## Qué esperar de PayPal.me
 
-- **`paypal`** — enlace externo, cero configuración, sin registro automático de quién pagó. Para validar.
-- **`payments`** — Stripe checkout completo con webhooks. Para cuando ya tienes tracción (ver [Stripe](/docs/configuracion/stripe)).
+Es un enlace externo: cero configuración, pero **sin registro automático** de quién pagó — revisa tu cuenta PayPal para confirmar cada pago. Para validar que alguien está dispuesto a pagar es más que suficiente; una pasarela completa (checkout embebido con webhooks) la agregas después, cuando ya tengas tracción.
 
 ## Cobro embebido (avanzado)
 

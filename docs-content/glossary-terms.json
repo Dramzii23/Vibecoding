@@ -41,9 +41,7 @@
   "yarn-install": { "term": "yarn install", "tip": "El comando que baja todas las dependencias de tu proyecto." },
   "ruta": { "term": "Ruta", "tip": "La dirección de una página dentro de tu app (ej. /dashboard) — cada carpeta con page.js en web/app es una." },
   "endpoint": { "term": "Endpoint", "tip": "Una dirección del backend que hace algo (ej. /api/waitlist)." },
-  "monorepo": { "term": "Monorepo", "tip": "Un solo repo que contiene varias partes del proyecto (ej. web/ y firmware/)." },
+  "monorepo": { "term": "Monorepo", "tip": "Un solo repo que contiene varias partes del proyecto (ej. web/ y docs/)." },
   "sdk": { "term": "SDK", "tip": "El paquete oficial de un servicio para usarlo desde tu código." },
-  "mcp": { "term": "MCP", "tip": "Un estándar para conectar la IA con herramientas y datos externos." },
-  "rag": { "term": "RAG", "tip": "Técnica donde la IA primero busca en tus documentos y responde con esa información." },
   "embedding": { "term": "Embedding", "tip": "Una lista de números que representa el significado de un texto, para buscar por parecido." }
 }

@@ -46,7 +46,7 @@ Abre `http://localhost:3000/docs` — verás la documentación completa, mapeada
 ```
 vibecoding/
 ├── web/             ← Next.js app (donde construyes tu producto)
-├── firmware/        ← Código de referencia ESP-Claw (Sem 8–9, ignóralo hasta entonces)
+├── docs/            ← App de docs (espejo de /docs para deploy aparte)
 ├── docs-content/    ← Fuente MDX de la documentación
 └── supabase/        ← Migrations y schema
 ```
@@ -54,8 +54,8 @@ vibecoding/
 ## Stack
 
 - **Next.js 15** (App Router, JavaScript) + **Tailwind 4** + **DaisyUI**
-- **Supabase** (Postgres + pgvector) + **Google Auth**
-- **OpenAI** SDK + **LangGraph.js** + **MCP**
+- **Supabase** (Postgres) + **Google Auth**
+- **OpenAI** SDK + **LangGraph.js** (agentes)
 - **Resend** (email) + **PostHog** (analytics, opcional)
 - **Vercel** + **yarn 1.x** workspaces
 
@@ -67,7 +67,7 @@ Las docs están dentro del repo (`docs-content/`) y se sirven en `/docs` cuando 
 
 - **Tutoriales** (`/docs/tutoriales/semana-N`): qué hacer cada semana del curso.
 - **Features** (`/docs/features/*`): cómo funciona cada pieza del stack.
-- **Recetas** (`/docs/recetas/*`): playbooks completos para casos comunes (agente Gmail, chatbot con RAG, SaaS, etc).
+- **Recetas** (`/docs/recetas/*`): playbooks completos para casos comunes (agente Gmail, marketplace simple, etc).
 - **Troubleshooting** (`/docs/troubleshooting`): errores comunes y su solución.
 
 ## Licencia

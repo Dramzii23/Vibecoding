@@ -16,7 +16,7 @@ Esta página es tu **mapa**: qué servicio pide qué key, **cuándo** la necesit
 | **OpenAI** | `OPENAI_API_KEY` | **Semana 3** — funciones de IA | [OpenAI](/docs/configuracion/openai) |
 | **Resend** | `RESEND_API_KEY` | Cuando envíes emails · **opcional** | [Resend](/docs/configuracion/resend) |
 | **PostHog** | `NEXT_PUBLIC_POSTHOG_KEY` · `_HOST` | Analítica · **opcional** | [PostHog](/docs/configuracion/posthog) |
-| **Stripe** | `STRIPE_SECRET_KEY` · `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` · `STRIPE_WEBHOOK_SECRET` | Solo si cobras (receta SaaS) · **opcional** | [Stripe](/docs/configuracion/stripe) |
+| **Panel admin** | `ADMIN_PASSWORD` | Para ver tus leads en `/admin` · **opcional** | [Panel admin](/docs/features/panel-admin) |
 | **Google (Gmail)** | `GOOGLE_OAUTH_CLIENT_ID` · `_SECRET` | Solo receta agente Gmail · **opcional** | [Login con Google](/docs/configuracion/google-oauth) |
 
 <Callout type="info" title="Ojo: el login con Google NO usa variables de entorno">
@@ -52,9 +52,7 @@ NEXT_PUBLIC_POSTHOG_KEY=phc_...        # Analytics
 NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com   # Analytics (default US; solo cámbialo si tu proyecto es de la región EU)
 GOOGLE_OAUTH_CLIENT_ID=...             # Receta agente Gmail
 GOOGLE_OAUTH_CLIENT_SECRET=...
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...   # Receta SaaS — ver Stripe paso a paso
-STRIPE_SECRET_KEY=sk_test_...
-STRIPE_WEBHOOK_SECRET=whsec_...        # Se crea después del deploy (ver Stripe paso a paso)
+ADMIN_PASSWORD=...                     # Panel /admin de leads
 ```
 
 ## En producción (Vercel)

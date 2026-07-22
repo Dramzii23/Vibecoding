@@ -7,18 +7,15 @@ const TECH_LABELS = {
   daisyui: "DaisyUI",
   supabase: "Supabase",
   postgres: "Postgres",
-  pgvector: "pgvector",
   auth: "Auth",
   openai: "OpenAI",
   langgraph: "LangGraph",
-  mcp: "MCP",
   resend: "Resend",
   posthog: "PostHog",
   vercel: "Vercel",
   yarn: "yarn",
   cursor: "Cursor",
   github: "GitHub",
-  esp: "ESP-Claw",
 }
 
 // Icono lucide por tecnología (aproximados; lucide no trae todos los brands).
@@ -29,18 +26,15 @@ const TECH_ICONS = {
   daisyui: "Flower2",
   supabase: "Database",
   postgres: "Database",
-  pgvector: "Boxes",
   auth: "KeyRound",
   openai: "Sparkles",
   langgraph: "Workflow",
-  mcp: "Plug",
   resend: "Mail",
   posthog: "BarChart3",
   vercel: "Triangle",
   yarn: "Package",
   cursor: "MousePointer2",
   github: "Github",
-  esp: "Cpu",
 }
 
 function TechIcon({ name, className }) {

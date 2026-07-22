@@ -53,16 +53,12 @@ const config = {
     emailLogin: false, // Magic link email — opcional
     aiChat: true, // Chat AI en /chat — Sem 3
     toolUse: true, // Tool use registry — Sem 4
-    agents: true, // LangGraph agents — Sem 5
-    mcp: true, // Servidor MCP en /api/mcp — Sem 5
-    rag: false, // RAG con pgvector — opcional
+    agents: true, // LangGraph agents — Sem 5 (opcional-avanzado)
     posthog: false, // Tracking — opcional
     resend: true, // Email — Sem 1+
-    pricing: true, // Muestra la sección de precios en la landing (vitrina; el cobro real es `payments`)
-    payments: false, // Stripe — opcional, fuera del temario
-    paypal: false, // Botón PayPal.me en Pricing — cobro simple sin Stripe (configura `payment` abajo)
+    pricing: true, // Muestra la sección de precios en la landing (vitrina; el cobro real es `paypal`)
+    paypal: false, // Botón PayPal.me en Pricing (configura `payment` abajo)
     adminPanel: true, // Panel /admin de leads (waitlist) — requiere ADMIN_PASSWORD en .env.local
-    hardware: false, // ESP-Claw bridge — Sem 8
   },
 
   // -----------------------------------------------------------
@@ -82,7 +78,6 @@ const config = {
     chatModel: "gpt-4o-mini", // default barato y rápido
     structuredModel: "gpt-4o-mini",
     agentModel: "gpt-4o", // los agentes razonan mejor con full gpt-4o
-    embeddingModel: "text-embedding-3-small",
     maxTokens: 1500,
     temperature: 0.4,
   },
@@ -122,7 +117,7 @@ const config = {
       eyebrow: "Curso Vibecoding · Remotto × Startup Chihuahua",
       title: "De 0 a producto AI-native en 11 semanas.",
       subtitle:
-        "Vibecoding es la plantilla del curso: Next.js, Supabase, OpenAI y MCP cableados desde el día 1. Tú extiendes con prompts en Cursor.",
+        "Vibecoding es la plantilla del curso: Next.js, Supabase y OpenAI cableados desde el día 1. Tú extiendes con prompts.",
       cta: { label: "Únete al waitlist", href: "#waitlist" },
       ctaSecondary: { label: "Ver docs", href: "/docs" },
     },
@@ -145,7 +140,7 @@ const config = {
         {
           icon: "PlugZap",
           title: "La IA no se integra sola",
-          body: "Structured outputs, tool use, agentes y MCP suenan bien hasta que hay que cablearlos.",
+          body: "Structured outputs, tool use y agentes suenan bien hasta que hay que cablearlos.",
         },
       ],
     },
@@ -157,7 +152,7 @@ const config = {
         {
           icon: "Sparkles",
           title: "AI nativa",
-          body: "OpenAI con structured outputs, tool use, agentes con LangGraph y MCP. Listo para activar.",
+          body: "OpenAI con structured outputs, tool use y agentes con LangGraph. Listo para activar.",
         },
         {
           icon: "Database",
@@ -178,11 +173,6 @@ const config = {
           icon: "Mail",
           title: "Email + analytics",
           body: "Resend para correos transaccionales y PostHog opcional para tracking.",
-        },
-        {
-          icon: "Cpu",
-          title: "Hardware-ready",
-          body: "Conexión MCP al ESP-Claw para el caso de hardware con IA del Módulo 3.",
         },
       ],
     },
@@ -291,7 +281,7 @@ const config = {
   // -----------------------------------------------------------
   // Pricing — vitrina de planes.
   // Se muestra en la landing si features.pricing === true.
-  // El cobro real (Stripe) depende de features.payments.
+  // El cobro real (PayPal.me) depende de features.paypal.
   // -----------------------------------------------------------
   pricing: {
     eyebrow: "Precios",
@@ -318,7 +308,6 @@ const config = {
         features: ["Usuarios ilimitados", "Soporte prioritario", "Sin branding"],
         cta: "Probar Pro",
         highlighted: true,
-        stripePriceId: "", // llenar cuando se active payments
       },
     ],
   },

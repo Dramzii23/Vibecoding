@@ -1,0 +1,40 @@
+---
+title: Semana 5 · Agentes
+description: Un agente que decide en pasos hacia un objetivo, construido sobre tus tools.
+order: 5
+---
+
+<StackBadge tech={["openai", "langgraph"]} />
+
+**Técnico · opcional-avanzado**
+
+<Callout type="info" title="Este módulo es para sacarle más jugo a la plantilla">
+Un agente no es obligatorio para tu MVP. Pero si tu producto tiene una tarea de varios pasos (clasificar un lead, responder, agendar), aquí es donde la IA deja de contestar y empieza a **trabajar**.
+</Callout>
+
+## Qué vas a tener al final
+
+- ✅ Un agente LangGraph que resuelve una tarea de tu producto en múltiples pasos.
+- ✅ Evals básicas — pruebas automáticas que miden si el agente funciona y no empeora con cada cambio.
+- ✅ Observabilidad — poder ver, paso a paso, qué hizo el agente y por qué.
+
+## Concepto: agente
+
+Un agente es un flujo donde la IA **decide** qué hacer en cada paso hacia un objetivo, usando tus tools del registry (Semana 4). El boilerplate trae uno de ejemplo con el patrón `recuperar → decidir → actuar`, con streaming para que veas cada paso en vivo.
+
+## Prepárate desde ahora
+
+1. **Termina la Semana 4**: necesitas al menos UNA tool propia funcionando en `/chat` — el agente se construye encima de ese registry.
+2. **Prueba el agente de ejemplo**: el boilerplate ya trae el flujo `recuperar → decidir → actuar` (`web/lib/agents/examples/recoverDecideAct.js` + endpoint `/api/ai/agent`). Pídele a tu asistente de IA: *"muéstrame cómo probar el endpoint /api/ai/agent con un ejemplo y explícame el grafo paso a paso como si fuera nuevo en esto"*.
+3. **Aterriza tu caso**: escribe en tu ficha qué tarea de varios pasos haría un agente en TU producto (ej. "recibe un lead → lo clasifica → responde → agenda"). Esa es la que construirás.
+
+## Pasos de la semana
+
+1. Definir el grafo del agente sobre tu caso.
+2. Conectar tus tools del registry como nodos.
+3. Probarlo desde `/agent` viendo el streaming de pasos.
+4. Correr evals con escenarios fijos para que no se rompa al iterar.
+
+## Entregable
+
+Feature con agente + evals corriendo.

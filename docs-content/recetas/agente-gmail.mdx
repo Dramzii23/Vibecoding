@@ -4,7 +4,7 @@ description: OAuth a Gmail → tool use → LangGraph que lee y contesta correos
 order: 1
 ---
 
-<StackBadge tech={["openai", "langgraph", "mcp", "auth"]} />
+<StackBadge tech={["openai", "langgraph", "auth"]} />
 
 **Necesitas antes:**
 
@@ -43,7 +43,7 @@ Es el patrón completo `tool use + agente + OAuth externo`. Lo que aprendas aqu�
 2. Guardar tokens en `profiles` (encriptados). La columna para guardarlos aún no existe en la tabla — llegará con esta receta.
 3. Registrar tools: `listUnreadEmails`, `readEmail`, `sendReply`.
 4. Armar grafo LangGraph: `fetch → classify → respond → report`.
-5. Exponer la tarea como MCP server o como página.
+5. Exponer la tarea como página o endpoint propio.
 
 ## Entregable
 

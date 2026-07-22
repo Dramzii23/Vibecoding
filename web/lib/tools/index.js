@@ -1,9 +1,8 @@
 // ============================================================
 // Tools · registry central
 // ------------------------------------------------------------
-// Un solo registro de herramientas que alimenta dos protocolos:
-//   - OpenAI function calling (getOpenAITools)
-//   - (Sem 5) servidor MCP, que expondrá este mismo registry
+// Un solo registro de herramientas para OpenAI function
+// calling (getOpenAITools), compartido por el chat y los agentes.
 //
 // El alumno solo escribe el execute() de cada tool en
 // lib/tools/examples/ y la registra aquí. El resto es genérico.
