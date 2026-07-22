@@ -32,7 +32,7 @@
   "provider-de-login": { "term": "Provider (de login)", "tip": "Cada servicio con el que tus usuarios pueden entrar a tu app (Google, GitHub…)." },
   "callback-url": { "term": "Callback URL", "tip": "La dirección de regreso: a dónde te devuelve un servicio cuando termina un proceso." },
   "scope": { "term": "Scope", "tip": "Los permisos concretos que tu app le pide a un servicio en nombre del usuario." },
-  "checkout": { "term": "Checkout", "tip": "La pantalla de pago donde el usuario pone su tarjeta." },
+  "checkout": { "term": "Checkout", "tip": "La pantalla de pago donde el usuario paga (en el curso usamos un enlace de PayPal.me)." },
   "api-key": { "term": "API key", "tip": "Una contraseña secreta para usar un servicio (ej. OpenAI). No la regales." },
   "variable-de-entorno": { "term": "Variable de entorno", "tip": "Un dato secreto o de config que vive en .env.local." },
   "framework": { "term": "Framework", "tip": "Una base con piezas listas para construir más rápido." },
@@ -42,6 +42,5 @@
   "ruta": { "term": "Ruta", "tip": "La dirección de una página dentro de tu app (ej. /dashboard) — cada carpeta con page.js en web/app es una." },
   "endpoint": { "term": "Endpoint", "tip": "Una dirección del backend que hace algo (ej. /api/waitlist)." },
   "monorepo": { "term": "Monorepo", "tip": "Un solo repo que contiene varias partes del proyecto (ej. web/ y docs/)." },
-  "sdk": { "term": "SDK", "tip": "El paquete oficial de un servicio para usarlo desde tu código." },
-  "embedding": { "term": "Embedding", "tip": "Una lista de números que representa el significado de un texto, para buscar por parecido." }
+  "sdk": { "term": "SDK", "tip": "El paquete oficial de un servicio para usarlo desde tu código." }
 }

@@ -2,7 +2,7 @@
 // OpenAI · cliente compartido
 // ------------------------------------------------------------
 // TODO el acceso a OpenAI pasa por aquí. Un solo cliente para
-// chat, structured outputs, agentes y embeddings — así la API key
+// chat, structured outputs y agentes — así la API key
 // y la configuración del SDK viven en un único lugar.
 //
 // Importa desde aquí en server-only (Route Handlers, Server
