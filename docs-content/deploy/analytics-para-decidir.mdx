@@ -4,9 +4,9 @@ description: Después de lanzar, en qué números fijarte para decidir qué mejo
 order: 5
 ---
 
-<StackBadge tech={["posthog"]} />
+<StackBadge tech={["vercel"]} />
 
-Ya lanzaste. Y si seguiste el [setup de PostHog](/docs/configuracion/posthog) y la guía de [analítica](/docs/features/analytics), ya estás midiendo. 🎉
+Ya lanzaste. Y si seguiste el [setup de Vercel Analytics](/docs/configuracion/vercel-analytics) y la guía de [analítica](/docs/features/analytics), ya estás midiendo. 🎉
 
 El problema no es medir. Es mirar los números **equivocados**. Casi todos empiezan mirando "visitas totales", se emocionan con un número grande… y no tienen idea de qué hacer con él. Aquí vas a aprender a mirar los pocos números que sí te dicen **qué mejorar**.
 
@@ -36,15 +36,15 @@ No necesitas un tablero con 40 gráficas. Necesitas estas cuatro. Cada una te di
 
 Si tuvieras que mirar una sola: **activación**. Traer gente que no llega a usar tu producto es llenar una cubeta con un hoyo en el fondo.
 
-## Cómo verlo en PostHog (en simple)
+## Cómo verlo en Vercel Analytics (en simple)
 
-No hace falta un tutorial largo. En PostHog vas a vivir en tres vistas:
+No hace falta un tutorial largo. En la pestaña **Analytics** de tu proyecto en Vercel vas a vivir en tres vistas:
 
-1. **Embudos (funnels)**: pones los pasos en orden (visita → registro → usa la feature) y ves en qué escalón se cae la gente.
-2. **Eventos**: la lista de acciones que tus usuarios hacen (clics, registros, etc.). Son los ladrillos de todo lo demás.
-3. **Retención**: una tabla que muestra cuántos vuelven al día 1, 7, 30.
+1. **Visitantes y páginas vistas**: cuánta gente entra y cuánto se mueve. Es tu termómetro general.
+2. **Páginas**: cuáles visitan más (¿llegan a `/dashboard` o se quedan en la landing?). Comparar la landing contra las páginas internas te da un embudo casero: de 100 que entran, ¿cuántos pasan de la puerta?
+3. **Referrers**: de dónde llega la gente (un post, WhatsApp, Google). Te dice qué canal sí trae visitas.
 
-El cómo exacto de armar cada una está en la guía de [analítica](/docs/features/analytics). Aquí lo que importa es saber **qué** buscas en cada vista.
+Para pasos que no son páginas (ej. "dejó su correo"), registra **eventos propios** con `track()` — el cómo está en la guía de [analítica](/docs/features/analytics). Aquí lo que importa es saber **qué** buscas en cada vista.
 
 ## El bucle de decisión
 
@@ -56,7 +56,7 @@ Medir sin decidir no sirve. El ciclo es siempre el mismo:
 4. **Vuelve a medir.** ¿Subió el 20%? Aprendiste algo. ¿No? Prueba otra hipótesis.
 
 <Callout type="success" title="Los números dicen 'qué', no 'por qué'">
-PostHog te dice **dónde** se caen. No te dice **por qué**. Para el porqué, habla con usuarios: un mensaje corto, una llamada de 10 minutos. "Vi que te registraste pero no volviste, ¿qué pasó?" vale oro.
+La analítica te dice **dónde** se caen. No te dice **por qué**. Para el porqué, habla con usuarios: un mensaje corto, una llamada de 10 minutos. "Vi que te registraste pero no volviste, ¿qué pasó?" vale oro.
 </Callout>
 
 ## No te obsesiones con los datos todavía

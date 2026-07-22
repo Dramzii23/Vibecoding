@@ -12,7 +12,7 @@
 //   - email:    configuración de Resend
 //   - auth:     providers habilitados
 //   - landing:  copy de la página pública
-//   - pricing:  planes (si features.payments está activo)
+//   - pricing:  planes (si features.pricing está activo; el cobro real es features.paypal)
 //
 // Tip Sem 1: empieza editando `app` y `landing.hero` con los datos de tu producto.
 // ============================================================
@@ -54,7 +54,6 @@ const config = {
     aiChat: true, // Chat AI en /chat — Sem 3
     toolUse: true, // Tool use registry — Sem 4
     agents: true, // LangGraph agents — Sem 5 (opcional-avanzado)
-    posthog: false, // Tracking — opcional
     resend: true, // Email — Sem 1+
     pricing: true, // Muestra la sección de precios en la landing (vitrina; el cobro real es `paypal`)
     paypal: false, // Botón PayPal.me en Pricing (configura `payment` abajo)

@@ -56,7 +56,7 @@ vibecoding/
 - **Next.js 15** (App Router, JavaScript) + **Tailwind 4** + **DaisyUI**
 - **Supabase** (Postgres) + **Google Auth**
 - **OpenAI** SDK + **LangGraph.js** (agentes)
-- **Resend** (email) + **PostHog** (analytics, opcional)
+- **Resend** (email) + **Vercel Web Analytics** (opcional)
 - **Vercel** + **yarn 1.x** workspaces
 
 Detalles y razones de cada elección: `/docs/intro/stack`.

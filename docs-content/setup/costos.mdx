@@ -4,7 +4,7 @@ description: Cuánto cuesta cada servicio, qué es gratis y cómo evitar sustos 
 order: 4
 ---
 
-<StackBadge tech={["supabase", "vercel", "openai", "resend", "posthog"]} />
+<StackBadge tech={["supabase", "vercel", "openai", "resend"]} />
 
 Antes de empezar a conectar cuentas, la duda típica es: *"¿esto me va a cobrar?"*. Respuesta corta: casi nada, y casi nunca al principio. Esta página te quita el miedo al costo y te enseña a poner un candado para que ningún bug te cobre de más.
 
@@ -25,12 +25,11 @@ Aquí va el mapa de qué usas de cada uno y cómo funciona su costo. **No memori
 | Servicio | Qué usas | Cómo es el costo | Precio oficial |
 | --- | --- | --- | --- |
 | **Supabase** | Base de datos (donde viven tus usuarios y datos) | Gratis hasta cierto límite de uso | [supabase.com/pricing](https://supabase.com/pricing) |
-| **Vercel** | Hosting (donde vive tu app en internet) | Plan **Hobby** gratis para proyectos personales | [vercel.com/pricing](https://vercel.com/pricing) |
+| **Vercel** | Hosting (donde vive tu app) + analytics (quién la visita) | Plan **Hobby** gratis para proyectos personales | [vercel.com/pricing](https://vercel.com/pricing) |
 | **Resend** | Envío de emails (bienvenida, avisos) | Gratis hasta cierto número de correos | [resend.com/pricing](https://resend.com/pricing) |
-| **PostHog** | Analytics (ver qué hace la gente en tu app) | Gratis hasta cierto volumen de eventos | [posthog.com/pricing](https://posthog.com/pricing) |
 | **OpenAI** | IA (respuestas, resúmenes, clasificación) | **Pago por uso desde el inicio** | [openai.com/api/pricing](https://openai.com/api/pricing) |
 
-Guías de setup de cada uno: [Supabase](/docs/setup/supabase) · [OpenAI](/docs/configuracion/openai) · [Resend](/docs/configuracion/resend) · [PostHog](/docs/configuracion/posthog).
+Guías de setup de cada uno: [Supabase](/docs/setup/supabase) · [OpenAI](/docs/configuracion/openai) · [Resend](/docs/configuracion/resend) · [Vercel Analytics](/docs/configuracion/vercel-analytics).
 
 <Callout type="info" title="Los precios cambian seguido">
 Cualquier cifra que veas en un tutorial (incluido este) puede estar vieja. Antes de asumir un precio, **confírmalo en la web oficial** del servicio con los enlaces de la tabla. Es la única fuente de verdad.

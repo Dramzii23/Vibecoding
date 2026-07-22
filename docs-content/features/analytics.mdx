@@ -1,18 +1,23 @@
 ---
-title: Analytics (PostHog)
-description: Tracking de eventos con un toggle.
+title: Analytics (Vercel)
+description: Visitas y páginas vistas sin configurar nada.
 order: 9
 ---
 
-<StackBadge tech={["posthog"]} />
+<StackBadge tech={["vercel"]} />
 
 <Callout type="info">
 Feature opcional — actívala cuando quieras medir uso real (útil desde la **Semana 6** para customer development).
 </Callout>
 
-Activación: `features.posthog: true` en `web/config.js` + dos variables en `web/.env.local`:
+Vibecoding usa **Vercel Web Analytics**: el paquete `@vercel/analytics` ya está instalado y el componente `<Analytics />` viene montado en `web/app/layout.js`. No hay toggle ni variables de entorno — solo falta **habilitarlo en el dashboard de Vercel** (pestaña Analytics de tu proyecto → Enable). El paso a paso está en [Vercel Analytics](/docs/configuracion/vercel-analytics).
 
-- `NEXT_PUBLIC_POSTHOG_KEY` — tu key del proyecto (la copias del dashboard de PostHog → Settings → Project API key).
-- `NEXT_PUBLIC_POSTHOG_HOST` — la URL de PostHog (ya viene con el default `https://us.i.posthog.com` en `web/.env.example`; solo cámbiala si tu proyecto está en la región EU).
+Qué te da out of the box: visitantes, páginas vistas, páginas más visitadas y de dónde llega la gente (referrers). Solo mide tu app **publicada** en Vercel, no `localhost`.
 
-Eventos críticos cubiertos por default: `signup`, `core_action`, `ai_call`, `tool_executed`.
+Si además quieres registrar eventos propios (ej. `signup`, clic en el CTA), el mismo paquete trae la función `track()`:
+
+```js
+import { track } from "@vercel/analytics"
+
+track("signup")
+```

@@ -35,6 +35,9 @@ const nextConfig = {
       { source: "/docs/features/mcp", destination: "/docs", permanent: true },
       { source: "/docs/features/rag", destination: "/docs", permanent: true },
       { source: "/docs/configuracion/stripe", destination: "/docs/configuracion/paypal", permanent: true },
+      // PostHog -> Vercel Analytics
+      { source: "/docs/configuracion/posthog", destination: "/docs/configuracion/vercel-analytics", permanent: true },
+      { source: "/docs/setup/posthog", destination: "/docs/configuracion/vercel-analytics", permanent: true },
       { source: "/docs/recetas/chatbot-con-rag", destination: "/docs", permanent: true },
       { source: "/docs/recetas/saas-con-suscripcion", destination: "/docs", permanent: true },
       // Rebrand VibeFast -> Vibecoding (slug viejo)
@@ -65,7 +68,7 @@ const nextConfig = {
         permanent: true,
       },
       // Páginas movidas a la sección Configuración
-      ...["variables-de-entorno", "google-oauth", "openai", "resend", "posthog"].map(
+      ...["variables-de-entorno", "google-oauth", "openai", "resend"].map(
         (slug) => ({
           source: `/docs/setup/${slug}`,
           destination: `/docs/configuracion/${slug}`,
