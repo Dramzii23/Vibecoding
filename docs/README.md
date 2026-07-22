@@ -31,4 +31,5 @@ Esta app está desacoplada de la app principal (no importa `@/config`, ni Supaba
 ## Notas
 
 - Los componentes de docs (`components/docs/*`) y `lib/{docs,searchFilter}.js` son **copias** de los de `web/` (fuente compartida: `docs-content/`). Al editar un componente de docs, cámbialo en ambos lugares hasta consolidar en este repo.
+- Los **redirects** de `next.config.mjs` están duplicados con los de `web/next.config.mjs` y deben mantenerse **idénticos**. Si mueves o renombras una página de `docs-content/`, agrega el redirect en los dos archivos.
 - Tema, tipografía y estilos de prosa viven en `app/globals.css` y `app/layout.js` (sin dependencia de `config.js`).

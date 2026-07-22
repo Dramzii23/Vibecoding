@@ -6,7 +6,7 @@ Construido para founders mayormente no técnicos con 4 horas semanales: arrancas
 
 ## Qué instalar (una vez que tienes el repo)
 
-Antes de correr nada, ten esto listo. Checklist completa con los enlaces de cada cuenta: `/docs/setup/instalacion`.
+Antes de correr nada, ten esto listo. Guía de instalación paso a paso: `/docs/setup/prepara-tu-compu`. Lista de cuentas con sus enlaces: `/docs/setup/cuentas`.
 
 **En tu computadora:**
 
@@ -39,7 +39,7 @@ yarn dev
 Abre `http://localhost:3000` — verás tu landing.
 Abre `http://localhost:3000/docs` — verás la documentación completa, mapeada semana a semana.
 
-> Primera vez: sigue la checklist en `/docs/setup/instalacion` y luego el paso a paso en `/docs/setup/quick-start` (después de `yarn dev`).
+> Primera vez: sigue la checklist en `/docs/setup/prepara-tu-compu` y luego el paso a paso en `/docs/setup/quick-start` (después de `yarn dev`).
 
 ## Estructura del repo
 
@@ -48,16 +48,24 @@ vibecoding/
 ├── web/             ← Next.js app (donde construyes tu producto)
 ├── docs/            ← App de docs (espejo de /docs para deploy aparte)
 ├── docs-content/    ← Fuente MDX de la documentación
-└── supabase/        ← Migrations y schema
+├── supabase/        ← Migrations y schema
+└── design-system/   ← Reglas visuales para cuando la IA diseña UI
 ```
+
+El mapa técnico completo (decisiones, convenciones y qué no tocar) está en
+[`ARCHITECTURE.md`](./ARCHITECTURE.md). Las reglas para agentes de IA que editan
+el repo (Cursor, Claude Code) están en [`CLAUDE.md`](./CLAUDE.md).
 
 ## Stack
 
 - **Next.js 15** (App Router, JavaScript) + **Tailwind 4** + **DaisyUI**
 - **Supabase** (Postgres) + **Google Auth**
-- **OpenAI** SDK + **LangGraph.js** (agentes)
-- **Resend** (email) + **Vercel Web Analytics** (opcional)
+- **OpenAI** SDK + **LangGraph.js** (agentes — material extra opcional)
+- **Resend** (email) + **Vercel Web Analytics**
 - **Vercel** + **yarn 1.x** workspaces
+
+Además trae un **panel `/admin`** para ver tus leads del waitlist (protegido con
+`ADMIN_PASSWORD`) y cobro simple con **PayPal.me** (toggle `features.paypal`).
 
 Detalles y razones de cada elección: `/docs/intro/stack`.
 
