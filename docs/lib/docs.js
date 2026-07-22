@@ -36,7 +36,7 @@ const SECTION_ICONS = {
 
 // Descripción corta por sección (para las cards del índice de docs)
 const SECTION_DESC = {
-  intro: "Qué es VibeFast y cómo usar estas docs.",
+  intro: "Qué es Vibecoding y cómo usar estas docs.",
   fundamentos: "Lo básico para arrancar sin experiencia.",
   setup: "De cero a tu proyecto corriendo.",
   configuracion: "Conecta cada servicio cuando lo necesites — tus keys y variables.",

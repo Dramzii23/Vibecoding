@@ -1,5 +1,5 @@
 // ============================================================
-// VibeFast · config.js
+// Vibecoding · config.js
 // ------------------------------------------------------------
 // ESTE ES EL ARCHIVO MÁS IMPORTANTE DEL BOILERPLATE.
 // Todo el branding, copy, features y configuración del producto vive aquí.
@@ -22,10 +22,10 @@ const config = {
   // Identidad del producto
   // -----------------------------------------------------------
   app: {
-    name: "VibeFast",
+    name: "Vibecoding",
     description:
-      "Boilerplate AI-native para founders. Construido para el Curso de Vibecoding Remotto.",
-    domain: "vibefast.dev", // sin https://, sin www
+      "Boilerplate AI-native para founders. Construido para el curso de Remotto × Startup Chihuahua.",
+    domain: "vibecoding.dev", // sin https://, sin www
     locale: "es", // "es" | "en"
     // URL pública: usa NEXT_PUBLIC_APP_URL en .env. En este config solo definimos el default.
     defaultUrl: "http://localhost:3000",
@@ -38,7 +38,7 @@ const config = {
     // Color primario en HEX. DaisyUI lo aplica como --color-primary via theme.
     primary: "#0ea5e9", // sky-500 (azul cielo)
     // Logo: puede ser texto o ruta a /public/logo.svg
-    logoText: "VibeFast",
+    logoText: "Vibecoding",
     logoSrc: null,
     // Estilo del bordeado global (DaisyUI usa esto para botones, cards)
     radius: "1rem",
@@ -81,9 +81,9 @@ const config = {
   email: {
     // Asegúrate de tener el dominio verificado en Resend antes de cambiar `from`.
     // En desarrollo Resend permite enviar a tu propio correo desde `onboarding@resend.dev`.
-    from: "VibeFast <onboarding@resend.dev>",
-    replyTo: "hola@vibefast.dev",
-    supportEmail: "soporte@vibefast.dev",
+    from: "Vibecoding <onboarding@resend.dev>",
+    replyTo: "hola@vibecoding.dev",
+    supportEmail: "soporte@vibecoding.dev",
   },
 
   // -----------------------------------------------------------
@@ -110,7 +110,7 @@ const config = {
       eyebrow: "Curso Vibecoding · Remotto × Startup Chihuahua",
       title: "De 0 a producto AI-native en 11 semanas.",
       subtitle:
-        "VibeFast es la plantilla del curso: Next.js, Supabase, OpenAI y MCP cableados desde el día 1. Tú extiendes con prompts en Cursor.",
+        "Vibecoding es la plantilla del curso: Next.js, Supabase, OpenAI y MCP cableados desde el día 1. Tú extiendes con prompts en Cursor.",
       cta: { label: "Únete al waitlist", href: "#waitlist" },
       ctaSecondary: { label: "Ver docs", href: "/docs" },
     },
@@ -202,7 +202,7 @@ const config = {
     },
     testimonials: {
       eyebrow: "Prueba social",
-      title: "Founders que ya lanzaron con VibeFast.",
+      title: "Founders que ya lanzaron con Vibecoding.",
       subtitle: "Testimonios de cohortes anteriores del curso.",
       items: [
         {
@@ -263,7 +263,7 @@ const config = {
         {
           title: "Comunidad",
           links: [
-            { label: "GitHub", href: "https://github.com/arampersand/VibeFast", external: true },
+            { label: "GitHub", href: "https://github.com/RoniHY/Vibecoding", external: true },
             { label: "Remotto", href: "https://remotto.com", external: true },
           ],
         },
@@ -271,7 +271,7 @@ const config = {
       // Compat: links planos usados en el bar inferior
       links: [
         { label: "Docs", href: "/docs" },
-        { label: "GitHub", href: "https://github.com/arampersand/VibeFast", external: true },
+        { label: "GitHub", href: "https://github.com/RoniHY/Vibecoding", external: true },
       ],
     },
   },
@@ -293,7 +293,7 @@ const config = {
         currency: "USD",
         interval: "mes",
         description: "Para probar el producto.",
-        features: ["Hasta 100 usuarios", "Soporte por email", "Branding VibeFast"],
+        features: ["Hasta 100 usuarios", "Soporte por email", "Branding Vibecoding"],
         cta: "Empezar gratis",
       },
       {

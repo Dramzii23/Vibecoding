@@ -50,7 +50,7 @@ export default async function LoginPage({ searchParams }) {
         </div>
 
         <p className="mt-6 text-center text-xs text-base-content/50">
-          Al continuar aceptas los términos del curso VibeFast.
+          Al continuar aceptas los términos del curso Vibecoding.
         </p>
       </div>
     </main>

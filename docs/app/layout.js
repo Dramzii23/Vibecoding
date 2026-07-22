@@ -17,10 +17,10 @@ const dmSans = DM_Sans({
 
 export const metadata = {
   title: {
-    default: "VibeFast · Docs",
-    template: "%s · VibeFast Docs",
+    default: "Vibecoding · Docs",
+    template: "%s · Vibecoding Docs",
   },
-  description: "Documentación de VibeFast — el boilerplate del Curso de Vibecoding.",
+  description: "Documentación de Vibecoding — el boilerplate del Curso de Vibecoding.",
   icons: { icon: "/favicon.svg" },
 }
 
@@ -33,14 +33,14 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="es"
-      data-theme="vibefast"
+      data-theme="vibecoding"
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${dmSans.variable}`}
     >
       <body className="bg-base-100 text-base-content">
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem('theme');if(t==='vibefast'||t==='vibefast-dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}`,
+            __html: `try{var t=localStorage.getItem('theme');if(t==='vibecoding'||t==='vibecoding-dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}`,
           }}
         />
         {children}

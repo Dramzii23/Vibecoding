@@ -6,7 +6,7 @@
 
 ---
 
-**Project:** VibeFast
+**Project:** Vibecoding
 **Generated:** 2026-07-01 02:25:51
 **Category:** SaaS (General)
 
@@ -27,7 +27,7 @@
 | Base 300 (bordes) | `#E2E8F0` | `--color-base-300` |
 | Base content (texto) | `#1E293B` | `--color-base-content` |
 
-**Color Notes:** Primary violeta = fuente de verdad en `web/config.js` (`config.brand.primary`), inyectado como `--color-primary`. CTAs usan `--color-accent` (naranja). Neutral = slate. Ajustado de la paleta azul default del skill a la marca VibeFast.
+**Color Notes:** Primary violeta = fuente de verdad en `web/config.js` (`config.brand.primary`), inyectado como `--color-primary`. CTAs usan `--color-accent` (naranja). Neutral = slate. Ajustado de la paleta azul default del skill a la marca Vibecoding.
 
 ### Typography
 

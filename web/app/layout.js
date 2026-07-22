@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang={config.app.locale}
-      data-theme="vibefast"
+      data-theme="vibecoding"
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${dmSans.variable}`}
       style={{ "--color-primary": config.brand.primary }}
@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
       <body className="bg-base-100 text-base-content">
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem('theme');if(t==='vibefast'||t==='vibefast-dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}`,
+            __html: `try{var t=localStorage.getItem('theme');if(t==='vibecoding'||t==='vibecoding-dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}`,
           }}
         />
         {children}

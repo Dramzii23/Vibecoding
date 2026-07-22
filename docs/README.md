@@ -1,6 +1,6 @@
-# VibeFast · Docs (app standalone)
+# Vibecoding · Docs (app standalone)
 
-App Next.js que sirve **solo la documentación** de VibeFast, desplegable por separado de la app principal (`web/`). Lee el contenido de `../docs-content` (la misma fuente que usa `web`).
+App Next.js que sirve **solo la documentación** de Vibecoding, desplegable por separado de la app principal (`web/`). Lee el contenido de `../docs-content` (la misma fuente que usa `web`).
 
 ## Correr en local
 

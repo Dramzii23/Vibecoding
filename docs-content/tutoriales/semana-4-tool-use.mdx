@@ -23,7 +23,7 @@ Los pasos de esta semana ya son ejecutables — el registry de tools y la pantal
 
 Tool use es darle al modelo una lista de **funciones que puede invocar**. El modelo decide cuándo llamarlas y con qué argumentos; tú ejecutas la función y le devuelves el resultado. El loop sigue hasta que el modelo da una respuesta final.
 
-VibeFast usa un **registry**: un catálogo central donde defines la tool una vez y queda disponible tanto para tool use (OpenAI) como para <Term id="mcp">MCP</Term> (Sem 5). Más detalle en [Features → Tool use](/docs/features/tool-use).
+Vibecoding usa un **registry**: un catálogo central donde defines la tool una vez y queda disponible tanto para tool use (OpenAI) como para <Term id="mcp">MCP</Term> (Sem 5). Más detalle en [Features → Tool use](/docs/features/tool-use).
 
 ## Paso 1 · Conoce las tools que ya trae tu proyecto
 
@@ -44,7 +44,7 @@ El boilerplate incluye 3 tools de ejemplo en `web/lib/tools/examples/`: `crearIt
 Piensa en UNA acción de tu producto que la IA debería poder ejecutar (ej. "cambiar el estatus de un lead", "agendar una cita"). Luego:
 
 <PromptBox label="Prompt para Cursor — tu primera tool">
-Crea una tool nueva en este proyecto VibeFast siguiendo el patrón de web/lib/tools/examples/ (mira crearItem.js).
+Crea una tool nueva en este proyecto Vibecoding siguiendo el patrón de web/lib/tools/examples/ (mira crearItem.js).
 
 La tool: \{qué hace, ej. "cambia el estatus de un lead"}.
 Recibe: \{argumentos, ej. id del lead y nuevo estatus (nuevo/contactado/cerrado)}.

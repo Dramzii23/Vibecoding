@@ -1,4 +1,4 @@
-# VibeFast
+# Vibecoding
 
 Boilerplate para el **Curso de Vibecoding Remotto × Startup Chihuahua** (11 semanas, 29 jun – 7 sep 2026).
 
@@ -44,7 +44,7 @@ Abre `http://localhost:3000/docs` — verás la documentación completa, mapeada
 ## Estructura del repo
 
 ```
-vibefast/
+vibecoding/
 ├── web/             ← Next.js app (donde construyes tu producto)
 ├── firmware/        ← Código de referencia ESP-Claw (Sem 8–9, ignóralo hasta entonces)
 ├── docs-content/    ← Fuente MDX de la documentación

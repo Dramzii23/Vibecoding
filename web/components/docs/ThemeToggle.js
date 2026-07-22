@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react"
 import { Sun, Moon } from "lucide-react"
 
-const LIGHT = "vibefast"
-const DARK = "vibefast-dark"
+const LIGHT = "vibecoding"
+const DARK = "vibecoding-dark"
 
 // Alterna el tema claro/oscuro escribiendo data-theme en <html> y
 // guardando la preferencia en localStorage (la lee el script del layout).

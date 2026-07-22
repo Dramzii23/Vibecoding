@@ -11,6 +11,6 @@
 
 insert into public.waitlist (email, source)
 values
-  ('demo1@vibefast.dev', 'seed'),
-  ('demo2@vibefast.dev', 'seed')
+  ('demo1@vibecoding.dev', 'seed'),
+  ('demo2@vibecoding.dev', 'seed')
 on conflict (email) do nothing;

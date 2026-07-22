@@ -51,7 +51,7 @@ export default function Footer() {
           <span>
             © {new Date().getFullYear()} {config.brand.logoText}
           </span>
-          <span>Hecho con VibeFast · Remotto × Startup Chihuahua</span>
+          <span>Hecho con Vibecoding · Remotto × Startup Chihuahua</span>
         </div>
       </div>
     </footer>

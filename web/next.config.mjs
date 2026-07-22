@@ -10,6 +10,12 @@ const nextConfig = {
   async redirects() {
     // Páginas de docs que se movieron de sección (reorg de la IA)
     return [
+      // Rebrand VibeFast -> Vibecoding (slug viejo)
+      {
+        source: "/docs/intro/que-es-vibefast",
+        destination: "/docs/intro/que-es-vibecoding",
+        permanent: true,
+      },
       {
         source: "/docs/fundamentos/prepara-tu-compu",
         destination: "/docs/setup/prepara-tu-compu",

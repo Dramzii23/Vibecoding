@@ -1,4 +1,4 @@
-// Marca de VibeFast: una "V" con forma de símbolo de raíz cuadrada (√).
+// Marca de Vibecoding: una "V" con forma de símbolo de raíz cuadrada (√).
 // Cuadrado redondeado con el color primary y el trazo en blanco.
 export default function Logo({ className = "size-7" }) {
   return (

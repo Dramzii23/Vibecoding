@@ -17,4 +17,4 @@ firmware/
 
 ## Setup (Sem 8)
 
-Documentación completa: [/docs/features/hardware-esp-claw](http://localhost:3000/docs/features/hardware-esp-claw) en tu instancia local de VibeFast.
+Documentación completa: [/docs/features/hardware-esp-claw](http://localhost:3000/docs/features/hardware-esp-claw) en tu instancia local de Vibecoding.
