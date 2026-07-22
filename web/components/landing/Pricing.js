@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Check } from "lucide-react"
 import config from "@/config"
+import PaymentButton from "@/components/landing/PaymentButton"
 
 export default function Pricing() {
   const { eyebrow, title, subtitle, plans } = config.pricing
@@ -53,12 +54,16 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <Link
-                href="#waitlist"
-                className={`btn mt-8 ${plan.highlighted ? "btn-accent" : "btn-outline"}`}
-              >
-                {plan.cta}
-              </Link>
+              {config.features.paypal && plan.price > 0 ? (
+                <PaymentButton amount={plan.price} className="mt-8" />
+              ) : (
+                <Link
+                  href="#waitlist"
+                  className={`btn mt-8 ${plan.highlighted ? "btn-accent" : "btn-outline"}`}
+                >
+                  {plan.cta}
+                </Link>
+              )}
             </div>
           ))}
         </div>

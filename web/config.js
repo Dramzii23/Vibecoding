@@ -60,7 +60,19 @@ const config = {
     resend: true, // Email — Sem 1+
     pricing: true, // Muestra la sección de precios en la landing (vitrina; el cobro real es `payments`)
     payments: false, // Stripe — opcional, fuera del temario
+    paypal: false, // Botón PayPal.me en Pricing — cobro simple sin Stripe (configura `payment` abajo)
+    adminPanel: true, // Panel /admin de leads (waitlist) — requiere ADMIN_PASSWORD en .env.local
     hardware: false, // ESP-Claw bridge — Sem 8
+  },
+
+  // -----------------------------------------------------------
+  // PayPal.me (si features.paypal está activo)
+  // -----------------------------------------------------------
+  payment: {
+    paypalMeUsername: "", // tu usuario de https://paypal.me (sin @ ni URL)
+    defaultAmount: 0, // 0 = el comprador elige el monto
+    currency: "USD",
+    buttonText: "Pagar con PayPal",
   },
 
   // -----------------------------------------------------------

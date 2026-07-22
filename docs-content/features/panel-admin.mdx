@@ -1,0 +1,42 @@
+---
+title: Panel admin de leads
+description: Tabla de leads del waitlist en /admin, protegida por contraseña.
+order: 11
+---
+
+<StackBadge tech={["next", "supabase"]} />
+
+La ruta `/admin` te muestra los emails capturados por el waitlist de la landing: total, registros de los últimos 7 días, buscador y la tabla completa (email, fuente, fecha).
+
+## Cómo activarlo
+
+1. En `web/.env.local` agrega una contraseña (elige la tuya):
+
+```bash
+ADMIN_PASSWORD=micontrasena123
+```
+
+2. Reinicia el servidor (`Ctrl+C` y `yarn dev`).
+3. Abre [http://localhost:3000/admin](http://localhost:3000/admin) y entra con esa contraseña.
+
+Para ver leads reales también necesitas las variables de Supabase configuradas (incluida `SUPABASE_SERVICE_ROLE_KEY`) — sin ellas el panel abre pero avisa que no pudo conectar.
+
+## Cómo funciona
+
+- **Auth por cookie**: al hacer login, una server action (`web/app/admin/actions.js`) valida la contraseña contra `ADMIN_PASSWORD` y guarda una cookie `admin_token` httpOnly que expira en 8 horas. No usa Supabase Auth — funciona aunque todavía no configures Google login.
+- **Datos con service role**: la tabla `waitlist` tiene RLS que solo permite lectura con service role (migración `007_rls_policies.sql`). El panel usa el cliente de `web/lib/supabase/admin.js`, que corre **solo en el servidor**.
+- **No indexable**: la página lleva `robots: noindex` para que los buscadores no la encuentren.
+
+## Archivos
+
+| Archivo | Qué hace |
+|---|---|
+| `web/app/admin/page.js` | Decide qué mostrar: setup, login o tabla |
+| `web/app/admin/actions.js` | Server actions de login/logout |
+| `web/app/admin/LoginForm.js` | Formulario de contraseña |
+| `web/app/admin/LeadsTable.js` | Stats, buscador y tabla |
+| `web/lib/supabase/admin.js` | Cliente Supabase con service role |
+
+## Mejora sugerida
+
+La contraseña en `.env` es deliberadamente simple (es material de curso). Cuando tengas Google Auth funcionando, una versión más robusta es proteger `/admin` con Supabase Auth y una lista `adminEmails` en `config.js`: si `user.email` está en la lista, entra; si no, redirect. Así no hay contraseña compartida que rotar.

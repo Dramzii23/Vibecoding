@@ -1,0 +1,46 @@
+---
+title: PayPal (PayPal.me)
+description: Cobra con un enlace de PayPal.me sin configurar Stripe.
+order: 7
+---
+
+La forma más simple de cobrar: un botón que abre tu enlace de [PayPal.me](https://paypal.me) con el monto del plan. Sin API keys, sin webhooks — ideal para validar que alguien está dispuesto a pagar.
+
+## Cómo activarlo
+
+1. Crea tu enlace en [paypal.me](https://paypal.me) (necesitas cuenta PayPal; para negocio en México configúrala como Business y en MXN).
+2. En `web/config.js`:
+
+```js
+features: {
+  paypal: true,
+},
+payment: {
+  paypalMeUsername: "tuusuario", // el de paypal.me/tuusuario
+  defaultAmount: 0,              // 0 = el comprador elige el monto
+  currency: "USD",               // o "MXN"
+  buttonText: "Pagar con PayPal",
+},
+```
+
+3. Listo: en la sección de precios de la landing, los planes con precio mayor a 0 muestran el botón de PayPal en lugar del CTA al waitlist.
+
+## Usarlo en cualquier parte
+
+```jsx
+import PaymentButton from "@/components/landing/PaymentButton"
+
+<PaymentButton />              // usa payment.defaultAmount
+<PaymentButton amount={49} />  // monto específico
+```
+
+Si `features.paypal` está apagado o falta el usuario, el botón no renderiza nada.
+
+## Diferencia con `features.payments` (Stripe)
+
+- **`paypal`** — enlace externo, cero configuración, sin registro automático de quién pagó. Para validar.
+- **`payments`** — Stripe checkout completo con webhooks. Para cuando ya tienes tracción (ver [Stripe](/docs/configuracion/stripe)).
+
+## Cobro embebido (avanzado)
+
+Si luego quieres cobrar sin salir de la página, PayPal tiene SDK oficial: crea una app en el [dashboard de developers](https://developer.paypal.com/dashboard/applications), instala `@paypal/react-paypal-js` y usa `PayPalScriptProvider` + `PayPalButtons`. Documentación: https://developer.paypal.com/sdk/js/
