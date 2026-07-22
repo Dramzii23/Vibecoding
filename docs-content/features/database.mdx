@@ -1,0 +1,29 @@
+---
+title: Database (Supabase + Postgres)
+description: Schema pre-modelado, RLS estricto, pgvector listo para activar.
+order: 2
+---
+
+<StackBadge tech={["supabase", "postgres", "pgvector"]} />
+
+<Callout type="info">
+La base de datos se configura en la **Semana 2** del curso (el schema ya viene listo — solo corres `supabase db push`).
+</Callout>
+
+## Tablas pre-construidas
+
+| Tabla | Propósito | Sem |
+|---|---|---|
+| `profiles` | Extiende `auth.users` | 2+ |
+| `waitlist` | Captura emails pre-launch | 1 |
+| `core_items` | CRUD genérico — renombra a tu dominio | 2 |
+| `ai_conversations` | Historial de chat | 3+ |
+| `ai_messages` | Mensajes individuales | 3+ |
+| `tool_calls` | Auditoría de tool use | 4–5 |
+| `events` | Analytics fallback | Opcional |
+
+<Callout type="warning">
+La tabla `documents` (RAG con embeddings) **aún no está incluida** en las migraciones — llegará junto con la receta de [Chatbot con RAG](/docs/recetas/chatbot-con-rag). `supabase db push` hoy no la crea.
+</Callout>
+
+Todas con **Row Level Security (RLS) estricta** — cada usuario solo puede ver y tocar sus propias filas, y la base de datos lo garantiza sola (aunque tu código tenga un bug, nadie ve datos ajenos).

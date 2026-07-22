@@ -1,0 +1,18 @@
+---
+title: Analytics (PostHog)
+description: Tracking de eventos con un toggle.
+order: 9
+---
+
+<StackBadge tech={["posthog"]} />
+
+<Callout type="info">
+Feature opcional — actívala cuando quieras medir uso real (útil desde la **Semana 6** para customer development).
+</Callout>
+
+Activación: `features.posthog: true` en `web/config.js` + dos variables en `web/.env.local`:
+
+- `NEXT_PUBLIC_POSTHOG_KEY` — tu key del proyecto (la copias del dashboard de PostHog → Settings → Project API key).
+- `NEXT_PUBLIC_POSTHOG_HOST` — la URL de PostHog (ya viene con el default `https://us.i.posthog.com` en `web/.env.example`; solo cámbiala si tu proyecto está en la región EU).
+
+Eventos críticos cubiertos por default: `signup`, `core_action`, `ai_call`, `tool_executed`.

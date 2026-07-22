@@ -1,0 +1,28 @@
+# ============================================================
+# Supabase · config local (CLI)
+# ------------------------------------------------------------
+# Solo lo necesitas si corres Supabase en local con `supabase start`.
+# Para el curso usamos Supabase Cloud, así que esto es opcional.
+# Las migrations de supabase/migrations/ se aplican igual con
+# `supabase db push` apuntando a tu proyecto cloud.
+# ============================================================
+
+project_id = "vibefast"
+
+[db]
+port = 54322
+major_version = 15
+
+[auth]
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+jwt_expiry = 3600
+enable_signup = true
+
+# Google OAuth. Las credenciales NO van aquí: se configuran en el
+# dashboard de Supabase Cloud (Authentication → Providers → Google).
+# En local, exporta GOOGLE_CLIENT_ID / GOOGLE_SECRET antes de `supabase start`.
+[auth.external.google]
+enabled = true
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_SECRET)"
