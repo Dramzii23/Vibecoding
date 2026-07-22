@@ -1,6 +1,14 @@
+import path from "path"
+import { fileURLToPath } from "url"
+
+// Raíz del monorepo explícita: sin esto, Next puede confundirse si hay
+// lockfiles sueltos fuera del repo (p. ej. en el home del usuario).
+const monorepoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  outputFileTracingRoot: monorepoRoot,
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "lh3.googleusercontent.com" }, // avatares Google
