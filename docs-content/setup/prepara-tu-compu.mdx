@@ -129,11 +129,26 @@ git config --global --list
 Quizá leíste por ahí que hay que configurar SSH para GitHub. Para este curso **no hace falta**: clonas por HTTPS y Cursor te pedirá iniciar sesión con GitHub una sola vez al publicar. Con tu nombre y correo configurados, ya estás.
 </Callout>
 
-## ✅ Verifica (Mac y Windows)
+## ✅ Verifica que todo quedó instalado
 
-Cierra y abre la terminal, y corre estos cuatro. Deberías ver un número de versión en cada uno:
+Son los mismos cuatro comandos en ambos sistemas; solo cambia la terminal donde los corres. Deberías ver un número de versión en cada uno.
+
+### 🍎 En Mac
+
+Abre la **Terminal** (`Cmd + Espacio` → escribe "Terminal" → Enter) y corre uno por uno:
 
 ```bash
+node --version
+yarn --version
+git --version
+supabase --version
+```
+
+### 🪟 En Windows
+
+Cierra la terminal que tenías abierta, abre una **nueva** ventana de **PowerShell** (menú Inicio → "Terminal" o "PowerShell") y corre uno por uno:
+
+```powershell
 node --version
 yarn --version
 git --version

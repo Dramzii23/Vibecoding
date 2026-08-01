@@ -6,10 +6,19 @@ order: 7
 
 La forma más simple de cobrar: un botón que abre tu enlace de [PayPal.me](https://paypal.me) con el monto del plan. Sin API keys, sin webhooks — ideal para validar que alguien está dispuesto a pagar.
 
-## Cómo activarlo
+## Paso 1 · Consigue tu enlace PayPal.me
 
-1. Crea tu enlace en [paypal.me](https://paypal.me) (necesitas cuenta PayPal; para negocio en México configúrala como Business y en MXN).
-2. En `web/config.js`:
+El enlace se crea dentro de tu cuenta de PayPal (necesitas una; para negocio en México configúrala como Business y en MXN). Paso a paso:
+
+1. Entra a [paypal.me](https://paypal.me) e inicia sesión con tu cuenta de PayPal. (También llegas desde tu **perfil de PayPal**: icono de tu cuenta → ahí aparece la opción de **PayPal.Me**.)
+2. Haz clic en el botón para **crear tu enlace** ("Obtén tu enlace" / "Create your link").
+3. Elige el **nombre de tu enlace** — la parte que va después de `paypal.me/`. Usa el nombre de tu producto o negocio, por ejemplo `paypal.me/tunegocio`. **Ojo**: una vez confirmado, **no se puede cambiar**, así que elígelo con calma.
+4. Confirma y listo: tu enlace queda activo, tipo `https://paypal.me/tunegocio`.
+5. Guárdalo: en el template solo vas a necesitar el **usuario** (lo que va después de `paypal.me/`), no la URL completa.
+
+## Paso 2 · Actívalo en el template
+
+Todo se configura en `web/config.js` (la única fuente de verdad del template):
 
 ```js
 features: {
@@ -23,7 +32,15 @@ payment: {
 },
 ```
 
-3. Listo: en la sección de precios de la landing, los planes con precio mayor a 0 muestran el botón de PayPal en lugar del CTA al waitlist.
+Listo: en la sección de precios de la landing, los planes con precio mayor a 0 muestran el botón de PayPal en lugar del CTA al waitlist.
+
+### O pídeselo a tu IA
+
+Si prefieres no editar el archivo a mano, copia este prompt en Cursor o Claude Code (cambia `TUUSUARIO` por el usuario real de tu enlace):
+
+<PromptBox label="Prompt para tu IA (Cursor / Claude Code)">
+Ya tengo mi enlace de PayPal.me: es paypal.me/TUUSUARIO. Activa el cobro con PayPal en este template editando únicamente web/config.js: pon "TUUSUARIO" como valor de paypalMeUsername dentro de la sección payment, y enciende el toggle paypal: true dentro de config.features. Revisa también que currency en payment sea la moneda en la que cobro (USD o MXN). No cambies nada más del archivo ni de otros archivos.
+</PromptBox>
 
 ## Usarlo en cualquier parte
 
