@@ -1,0 +1,100 @@
+---
+title: Claude Code paso a paso
+description: Instala y usa Claude Code, la alternativa a Cursor para vibecodear desde la terminal.
+order: 8
+---
+
+<StackBadge tech={["claude", "node"]} />
+
+**Claude Code** es la herramienta de Anthropic para vibecodear desde la <Term id="terminal">terminal</Term> (o desde la terminal integrada de tu editor). Hace lo mismo que le pides a <Term id="cursor">Cursor</Term>: le hablas en español normal, lee los archivos de tu proyecto, propone cambios y los aplica cuando tú apruebas. Es una **alternativa a Cursor** — para el curso puedes usar cualquiera de los dos.
+
+<Callout type="warning" title="Necesitas la versión de PAGO de Claude">
+Claude Code **no funciona con la cuenta gratis** de Claude. Necesitas un plan **Pro o superior** en [claude.ai](https://claude.ai) (Pro cuesta ~$20 USD/mes). Si ya pagas Cursor y no quieres pagar dos suscripciones, quédate con Cursor: todo el curso funciona igual con cualquiera de los dos.
+</Callout>
+
+## Instalación
+
+El método recomendado es el **instalador nativo** oficial: un solo <Term id="comando">comando</Term> en la terminal. (También existe `npm install -g @anthropic-ai/claude-code` si ya tienes Node, pero el instalador nativo se actualiza solo y da menos problemas.)
+
+### 🍎 En Mac
+
+1. Abre la **Terminal** (`Cmd + Espacio`, escribe **Terminal**, Enter).
+2. Pega esto y dale Enter:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+3. Cuando termine, **cierra y abre una terminal nueva** y verifica:
+
+```bash
+claude --version
+```
+
+Deberías ver un número de versión. Si dice *"command not found"*, cierra y reabre la terminal otra vez.
+
+### 🪟 En Windows
+
+1. Abre el menú Inicio, escribe **PowerShell** y ábrelo.
+2. Pega esto y dale Enter:
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+3. Cuando termine, **cierra y abre una terminal nueva** y verifica:
+
+```powershell
+claude --version
+```
+
+Deberías ver un número de versión. Si dice *"no se reconoce"*, cierra y reabre la terminal (en Windows casi siempre es eso).
+
+### Inicia sesión (Mac y Windows)
+
+En esa terminal nueva escribe:
+
+```bash
+claude
+```
+
+La primera vez te va a pedir **iniciar sesión**: se abre el navegador para que entres con tu cuenta de [claude.ai](https://claude.ai) (la de pago). Aceptas, vuelves a la terminal y listo — solo se hace una vez.
+
+## Cómo usarlo
+
+La única regla importante: hay que abrir Claude Code **dentro de la carpeta de tu proyecto**, para que vea tus archivos. Dos formas fáciles:
+
+- **Desde Cursor / VS Code** (la más cómoda): abre tu proyecto como siempre y abre la terminal integrada (menú *Terminal → New Terminal*, o `` Ctrl + ` ``). Esa terminal ya está parada en tu carpeta.
+- **Sin editor**: en Mac, clic derecho sobre la carpeta en Finder → *Servicios → Nueva terminal en la carpeta*. En Windows, clic derecho sobre la carpeta → *Abrir en Terminal*.
+
+Ya ahí, escribe `claude` y empieza a hablarle **en español normal**, igual que a Cursor: le pides el cambio, Claude Code lee y edita los archivos de tu proyecto directamente, y **te pregunta antes de aplicar** cada cambio o comando — tú apruebas o rechazas con las flechas y Enter.
+
+<PromptBox label="Prompt para Claude Code">
+Cambia el título de la landing en web/config.js: quiero que diga "Tu nueva frase aquí". No toques nada más.
+</PromptBox>
+
+<PromptBox label="Prompt para Claude Code">
+Activa el botón de PayPal en mi proyecto Vibecoding: pon features.paypal en true en web/config.js y configura payment.paypalMeUsername con "miusuario". No cambies nada más.
+</PromptBox>
+
+Lo básico para moverte dentro de Claude Code:
+
+| Quieres… | Haz esto |
+|---|---|
+| Pedir un cambio | Escríbelo en español normal y Enter |
+| Empezar un tema nuevo | Escribe `/clear` (borra la conversación, no tus archivos) |
+| Interrumpir a Claude a media tarea | Tecla `Esc` |
+| Salir | Escribe `exit` (o `Ctrl + C`) |
+
+<Callout type="info" title="Los mismos consejos que con Cursor">
+Todo lo de [Háblale bien a la IA](/docs/fundamentos/hablarle-a-la-ia) aplica igual: pide una cosa a la vez, di en qué archivo, y revisa lo que propone antes de aprobar. Y después de cada cambio que te guste, guarda con Git como siempre.
+</Callout>
+
+<Checkpoint>
+✅ `claude --version` responde con un número en una terminal nueva.
+✅ Iniciaste sesión con tu cuenta de claude.ai (plan Pro o superior).
+✅ Abriste `claude` dentro de la carpeta de tu proyecto y le pediste un cambio pequeño.
+✅ Sabes salir (`exit`), interrumpir (`Esc`) y empezar de cero (`/clear`).
+</Checkpoint>
+
+**Para el curso, Claude Code sirve exactamente igual que Cursor**: todos los prompts de las guías y tutoriales funcionan en cualquiera de los dos. Usa el que prefieras — o los dos.

@@ -14,6 +14,7 @@ const TECH_LABELS = {
   vercel: "Vercel",
   yarn: "yarn",
   cursor: "Cursor",
+  claude: "Claude Code",
   github: "GitHub",
 }
 
@@ -32,6 +33,7 @@ const TECH_ICONS = {
   vercel: "Triangle",
   yarn: "Package",
   cursor: "MousePointer2",
+  claude: "Terminal",
   github: "Github",
 }
 
