@@ -1,4 +1,5 @@
 import * as LucideIcons from "lucide-react"
+import BrandIcon, { hasBrandIcon } from "./BrandIcon"
 
 const TECH_LABELS = {
   next: "Next.js",
@@ -18,7 +19,7 @@ const TECH_LABELS = {
   github: "GitHub",
 }
 
-// Icono lucide por tecnología (aproximados; lucide no trae todos los brands).
+// Fallback lucide para lo que no es una marca (BrandIcon cubre los logos reales).
 const TECH_ICONS = {
   next: "Triangle",
   react: "Atom",
@@ -51,7 +52,11 @@ export default function StackBadge({ tech = [] }) {
           key={t}
           className="inline-flex items-center gap-1.5 rounded-md border border-primary/20 bg-primary/5 px-2 py-0.5 text-xs font-semibold text-base-content/80"
         >
-          <TechIcon name={TECH_ICONS[t] || "Box"} className="size-3.5 text-primary" />
+          {hasBrandIcon(t) ? (
+            <BrandIcon brand={t} className="size-3.5 text-primary" />
+          ) : (
+            <TechIcon name={TECH_ICONS[t] || "Box"} className="size-3.5 text-primary" />
+          )}
           {TECH_LABELS[t] || t}
         </span>
       ))}

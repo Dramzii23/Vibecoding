@@ -3,6 +3,7 @@ import PromptBox from "./PromptBox"
 import Callout from "./Callout"
 import Checkpoint from "./Checkpoint"
 import StackBadge from "./StackBadge"
+import BrandIcon from "./BrandIcon"
 import VideoLoom from "./VideoLoom"
 import CodeBlock from "./CodeBlock"
 import Term from "./Term"
@@ -13,6 +14,7 @@ export const mdxComponents = {
   Callout,
   Checkpoint,
   StackBadge,
+  BrandIcon,
   VideoLoom,
   Term,
   // Bloques de código con barra (lenguaje + copiar)
