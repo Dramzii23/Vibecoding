@@ -22,10 +22,10 @@ const config = {
   // Identidad del producto
   // -----------------------------------------------------------
   app: {
-    name: "Vibecoding",
+    name: "VibeCode",
     description:
-      "Plantilla del curso Vibe Code con Change and Code. Publica tu landing y usa la IA para construir tu negocio.",
-    domain: "vibecoding.dev", // sin https://, sin www
+      "Boilerplate para crear páginas y productos web con IA, pensado para estudiantes y profesionistas de Chihuahua que quieren estar al día con la tecnología.",
+    domain: "vibecode.mx", // sin https://, sin www
     locale: "es", // "es" | "en"
     // URL pública: usa NEXT_PUBLIC_APP_URL en .env. En este config solo definimos el default.
     defaultUrl: "http://localhost:3000",
@@ -36,7 +36,7 @@ const config = {
   // -----------------------------------------------------------
   brand: {
     // Color primario en HEX. DaisyUI lo aplica como --color-primary via theme.
-    primary: "#0ea5e9", // sky-500 (azul cielo)
+    primary: "#4F46E5", // indigo-600: tech, IA y confianza profesional
     // Logo: puede ser texto o ruta a /public/logo.svg
     logoText: "Vibecoding",
     logoSrc: null,
@@ -113,11 +113,11 @@ const config = {
       { label: "Docs", href: "/docs" },
     ],
     hero: {
-      eyebrow: "Curso Vibe Code · Change and Code",
-      title: "Publica tu landing y ponle IA a tu negocio.",
+      eyebrow: "Boilerplate con IA · Chihuahua",
+      title: "Crea tu producto web con IA y quédate al día.",
       subtitle:
-        "Esta plantilla es tu punto de partida en el curso: página lista para publicar, captura de leads y IA integrada. Tú la haces tuya describiendo lo que quieres — la IA escribe el código.",
-      cta: { label: "Apúntate a la lista", href: "#waitlist" },
+        "La base para estudiantes y profesionistas de Chihuahua que quieren lanzar páginas reales sin quedarse atrás en tecnología.",
+      cta: { label: "Empieza ahora", href: "#waitlist" },
       ctaSecondary: { label: "Ver docs", href: "/docs" },
     },
     problem: {
@@ -149,34 +149,19 @@ const config = {
       subtitle: "Tú te enfocas en tu negocio; la plantilla pone la parte técnica.",
       items: [
         {
-          icon: "Rocket",
-          title: "Landing lista para publicar",
-          body: "Edita config.js con los textos de tu negocio y tienes página propia con URL pública.",
-        },
-        {
-          icon: "Users",
-          title: "Leads sin hojas de cálculo",
-          body: "Formulario de registro + panel /admin para ver a cada interesado, con fecha y fuente.",
-        },
-        {
-          icon: "Database",
-          title: "Base de datos + login",
-          body: "Supabase con tablas pre-modeladas, seguridad RLS y entrada con Google. Sin diseñar nada desde cero.",
-        },
-        {
-          icon: "Mail",
-          title: "Emails automáticos",
-          body: "Resend manda la bienvenida y los avisos de tu negocio por ti.",
+          icon: "LayoutTemplate",
+          title: "Páginas listas para publicar",
+          body: "Parte de un boilerplate y lanza tu landing o producto web sin empezar de cero.",
         },
         {
           icon: "Sparkles",
-          title: "IA integrada",
-          body: "Chat con tus datos, tool use y structured outputs listos para activar cuando los necesites.",
+          title: "IA integrada de verdad",
+          body: "Chat, tools y agentes ya cableados para construir y operar tu producto con IA.",
         },
         {
-          icon: "Bot",
-          title: "Agentes (opcional)",
-          body: "Si tu negocio tiene tareas de varios pasos, trae agentes LangGraph para que la IA trabaje sola.",
+          icon: "RefreshCw",
+          title: "Stack del día a día",
+          body: "Usas las herramientas que el mercado pide hoy, no las de hace cinco años.",
         },
       ],
     },
@@ -185,20 +170,20 @@ const config = {
       title: "Lo que todos preguntan antes de arrancar.",
       items: [
         {
-          q: "¿Necesito saber programar?",
-          a: "No. El curso asume emprendedores no técnicos. Construyes describiéndole a la IA lo que quieres; la plantilla hace el resto.",
+          q: "¿Necesito saber programar para usarlo?",
+          a: "No. Describes lo que quieres en español y la IA escribe el código sobre este boilerplate; tú revisas y publicas.",
         },
         {
-          q: "¿Cuánto cuesta correr esto?",
-          a: "Vercel y Supabase tienen planes gratuitos generosos. OpenAI cobra por uso: con gpt-4o-mini, el costo de un MVP del curso ronda US$5-20.",
+          q: "¿Sirve para un proyecto de la uni o para un negocio?",
+          a: "Sí. Estudiantes lo usan para entregar algo real; profesionistas, para lanzar una landing o un producto con IA integrada.",
         },
         {
-          q: "¿Puedo cambiar el stack?",
-          a: "Sí, pero las docs asumen este stack. Cambiar pieza por pieza es posible cuando termines el curso.",
+          q: "¿Esto me actualiza de verdad o es otra plantilla vieja?",
+          a: "El stack es el que se usa hoy: Next.js, Supabase e IA con chat, tools y agentes. Lo aprendes construyendo, no viendo tutoriales de hace años.",
         },
         {
-          q: "¿Y si me atoro?",
-          a: "Las docs incluyen una sección de troubleshooting con los 20 errores más comunes. Además tienes las sesiones del curso para preguntar.",
+          q: "¿Cuánto cuesta tenerlo en línea desde Chihuahua?",
+          a: "Vercel y Supabase tienen planes gratuitos. OpenAI cobra por uso; un MVP típico ronda US$5–20 al mes.",
         },
       ],
     },

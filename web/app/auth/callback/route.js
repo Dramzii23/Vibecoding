@@ -13,6 +13,9 @@ export async function GET(request) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get("code")
   const next = searchParams.get("next") ?? "/dashboard"
+  // #region agent log
+  fetch('http://127.0.0.1:7272/ingest/39df767c-b973-463f-a8a2-7edad4dec321',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6525be'},body:JSON.stringify({sessionId:'6525be',runId:'pre-fix',hypothesisId:'H3-H4',location:'auth/callback/route.js:GET',message:'callback hit',data:{origin,hasCode:!!code,next,nextIsRelative:typeof next==='string'&&next.startsWith('/'),forwardedHost:request.headers.get('x-forwarded-host')},timestamp:Date.now()})}).catch(()=>{});
+  // #endregion
 
   if (code) {
     const supabase = await createClient()

@@ -13,12 +13,32 @@ export default function GoogleButton({ next = "/dashboard" }) {
     setLoading(true)
     const supabase = createClient()
     const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`
-    const { error } = await supabase.auth.signInWithOAuth({
+    // #region agent log
+    await fetch('http://127.0.0.1:7272/ingest/39df767c-b973-463f-a8a2-7edad4dec321',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6525be'},body:JSON.stringify({sessionId:'6525be',runId:'pre-fix',hypothesisId:'H1-H3',location:'GoogleButton.js:signIn',message:'oauth redirectTo before authorize',data:{origin:window.location.origin,next,redirectTo,hasHttps:redirectTo.startsWith('https://'),hasHttp:redirectTo.startsWith('http://'),hasNextQuery:redirectTo.includes('?next='),nextIsRelative:typeof next==='string'&&next.startsWith('/')},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion
+    const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo },
+      options: { redirectTo, skipBrowserRedirect: true },
     })
-    if (error) setLoading(false)
-    // En éxito, el navegador navega a Google; no hay que resetear loading.
+    let authorizeHost = null
+    let authorizeRedirectTo = null
+    try {
+      if (data?.url) {
+        const authorizeUrl = new URL(data.url)
+        authorizeHost = authorizeUrl.host
+        authorizeRedirectTo = authorizeUrl.searchParams.get("redirect_to")
+      }
+    } catch {
+      /* ignore parse errors */
+    }
+    // #region agent log
+    await fetch('http://127.0.0.1:7272/ingest/39df767c-b973-463f-a8a2-7edad4dec321',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6525be'},body:JSON.stringify({sessionId:'6525be',runId:'pre-fix',hypothesisId:'H3-H5',location:'GoogleButton.js:signIn:after',message:'oauth authorize url parsed',data:{hasError:!!error,errorMessage:error?.message||null,hasAuthorizeUrl:!!data?.url,authorizeHost,authorizeRedirectTo},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion
+    if (error) {
+      setLoading(false)
+      return
+    }
+    if (data?.url) window.location.assign(data.url)
   }
 
   return (
