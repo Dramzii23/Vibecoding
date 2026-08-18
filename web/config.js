@@ -22,9 +22,9 @@ const config = {
   // Identidad del producto
   // -----------------------------------------------------------
   app: {
-    name: "VibeCode",
+    name: "Class Dashroom",
     description:
-      "Boilerplate para crear páginas y productos web con IA, pensado para estudiantes y profesionistas de Chihuahua que quieren estar al día con la tecnología.",
+      "Espacio para que estudiantes y profes puedan interactuar, compartir recursos y organizar sus clases en línea.",
     domain: "vibecode.mx", // sin https://, sin www
     locale: "es", // "es" | "en"
     // URL pública: usa NEXT_PUBLIC_APP_URL en .env. En este config solo definimos el default.
@@ -36,7 +36,7 @@ const config = {
   // -----------------------------------------------------------
   brand: {
     // Color primario en HEX. DaisyUI lo aplica como --color-primary via theme.
-    primary: "#4F46E5", // indigo-600: tech, IA y confianza profesional
+    primary: "#1CD0EB", // indigo-600: tech, IA y confianza profesional
     // Logo: puede ser texto o ruta a /public/logo.svg
     logoText: "Vibecoding",
     logoSrc: null,
@@ -114,7 +114,7 @@ const config = {
     ],
     hero: {
       eyebrow: "Boilerplate con IA · Chihuahua",
-      title: "Crea tu producto web con IA y quédate al día.",
+      title: "Bienvenido a tu espacio de clase.",
       subtitle:
         "La base para estudiantes y profesionistas de Chihuahua que quieren lanzar páginas reales sin quedarse atrás en tecnología.",
       cta: { label: "Empieza ahora", href: "#waitlist" },
