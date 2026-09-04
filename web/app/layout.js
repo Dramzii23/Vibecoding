@@ -32,7 +32,11 @@ export const metadata = {
     type: "website",
     locale: config.app.locale === "es" ? "es_MX" : "en_US",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: config.app.name,
+    description: config.app.description,
+  },
   icons: { icon: "/favicon.svg" },
 }
 

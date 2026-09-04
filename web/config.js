@@ -22,10 +22,10 @@ const config = {
   // Identidad del producto
   // -----------------------------------------------------------
   app: {
-    name: "Class Dashroom",
+    name: "¿Qué toca hoy?",
     description:
-      "Espacio para que estudiantes y profes puedan interactuar, compartir recursos y organizar sus clases en línea.",
-    domain: "vibecode.mx", // sin https://, sin www
+      "Antes de entrar a clase, revisa qué actividad toca hoy según tu carta descriptiva —con su actividad y materiales— mientras tus alumnos consultan en vivo su calificación, asistencia y tareas.",
+    domain: "quetocahoy.mx", // sin https://, sin www
     locale: "es", // "es" | "en"
     // URL pública: usa NEXT_PUBLIC_APP_URL en .env. En este config solo definimos el default.
     defaultUrl: "http://localhost:3000",
@@ -36,7 +36,7 @@ const config = {
   // -----------------------------------------------------------
   brand: {
     // Color primario en HEX. DaisyUI lo aplica como --color-primary via theme.
-    primary: "#1CD0EB", // indigo-600: tech, IA y confianza profesional
+    primary: "#2563EB", // azul pizarrón: orden, confianza y foco académico
     // Logo: puede ser texto o ruta a /public/logo.svg
     logoText: "Vibecoding",
     logoSrc: null,
@@ -113,11 +113,11 @@ const config = {
       { label: "Docs", href: "/docs" },
     ],
     hero: {
-      eyebrow: "Boilerplate con IA · Chihuahua",
-      title: "Bienvenido a tu espacio de clase.",
+      eyebrow: "Para profesores universitarios",
+      title: "Entra a clase sabiendo qué toca hoy.",
       subtitle:
-        "La base para estudiantes y profesionistas de Chihuahua que quieren lanzar páginas reales sin quedarse atrás en tecnología.",
-      cta: { label: "Empieza ahora", href: "#waitlist" },
+        "Captura tu carta descriptiva una vez y cada sesión te dice el tema, la actividad y los materiales, mientras tus alumnos ven su avance sin preguntarte a ti.",
+      cta: { label: "Organiza tu primera materia", href: "#waitlist" },
       ctaSecondary: { label: "Ver docs", href: "/docs" },
     },
     problem: {
@@ -145,45 +145,45 @@ const config = {
     },
     features: {
       eyebrow: "Lo que ya viene listo",
-      title: "Todo lo del curso, ya cableado.",
-      subtitle: "Tú te enfocas en tu negocio; la plantilla pone la parte técnica.",
+      title: "Tu carta descriptiva, convertida en la clase de hoy.",
+      subtitle: "Captura una vez por materia; la plataforma organiza el resto del semestre.",
       items: [
         {
-          icon: "LayoutTemplate",
-          title: "Páginas listas para publicar",
-          body: "Parte de un boilerplate y lanza tu landing o producto web sin empezar de cero.",
+          icon: "CalendarCheck",
+          title: "Sabes qué toca antes de entrar",
+          body: "Ves la sesión de hoy con su actividad y sus materiales, sin buscar entre el PDF, Teams y tu correo.",
         },
         {
-          icon: "Sparkles",
-          title: "IA integrada de verdad",
-          body: "Chat, tools y agentes ya cableados para construir y operar tu producto con IA.",
+          icon: "Users",
+          title: "Ficha del alumno en vivo",
+          body: "Cada alumno consulta su calificación, asistencia y tareas por su cuenta, así dejas de contestar lo mismo 40 veces por parcial.",
         },
         {
-          icon: "RefreshCw",
-          title: "Stack del día a día",
-          body: "Usas las herramientas que el mercado pide hoy, no las de hace cinco años.",
+          icon: "FolderOpen",
+          title: "Materiales donde deben estar",
+          body: "Sube una vez el material de cada tema y queda ligado a su sesión para siempre, sin reenviarlo cada semestre.",
         },
       ],
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      title: "Lo que todos preguntan antes de arrancar.",
+      title: "Lo que pregunta un profesor antes de arrancar.",
       items: [
         {
-          q: "¿Necesito saber programar para usarlo?",
-          a: "No. Describes lo que quieres en español y la IA escribe el código sobre este boilerplate; tú revisas y publicas.",
+          q: "¿Cómo subo mi carta descriptiva? ¿Tengo que capturar todo a mano?",
+          a: "Cargas tu carta descriptiva una vez por materia y organizamos las sesiones, temas y actividades. Después solo ajustas lo que cambie en el semestre.",
         },
         {
-          q: "¿Sirve para un proyecto de la uni o para un negocio?",
-          a: "Sí. Estudiantes lo usan para entregar algo real; profesionistas, para lanzar una landing o un producto con IA integrada.",
+          q: "¿Qué ven y qué no ven mis alumnos?",
+          a: "Cada alumno entra con matrícula y PIN y solo ve su propia calificación, asistencia y tareas en modo lectura. No ven tu carta descriptiva completa ni la información de sus compañeros.",
         },
         {
-          q: "¿Esto me actualiza de verdad o es otra plantilla vieja?",
-          a: "El stack es el que se usa hoy: Next.js, Supabase e IA con chat, tools y agentes. Lo aprendes construyendo, no viendo tutoriales de hace años.",
+          q: "Doy varias materias, ¿puedo manejarlas todas ahí?",
+          a: "Sí. Puedes dar de alta cada materia por separado, con su propia carta descriptiva, grupo de alumnos y calificaciones.",
         },
         {
-          q: "¿Cuánto cuesta tenerlo en línea desde Chihuahua?",
-          a: "Vercel y Supabase tienen planes gratuitos. OpenAI cobra por uso; un MVP típico ronda US$5–20 al mes.",
+          q: "¿Sigo pudiendo usar Excel y Teams o tengo que migrar todo de golpe?",
+          a: "No es todo o nada. Puedes capturar calificaciones y avisos aquí desde el día uno, y migrar tareas de Teams a tu ritmo.",
         },
       ],
     },
