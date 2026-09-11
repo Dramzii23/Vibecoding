@@ -42,7 +42,7 @@ const config = {
     primary: "#2563EB", // azul pizarrón: orden, confianza y foco académico
     // Logo: puede ser texto o ruta a /public/logo.svg
     logoText: "¿Qué toca hoy?",
-    logoSrc: null,
+    logoSrc: "/logo.png",
     // Estilo del bordeado global (DaisyUI usa esto para botones, cards)
     radius: "1rem",
   },
