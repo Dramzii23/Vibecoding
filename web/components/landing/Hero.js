@@ -1,12 +1,31 @@
 import Link from "next/link"
-import { ArrowRight, Sparkles, LayoutDashboard, MessageSquare, Bot } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 import config from "@/config"
 
-const MOCK_NAV = [
-  { label: "Dashboard", icon: LayoutDashboard, active: true },
-  { label: "Chat", icon: MessageSquare },
-  { label: "Agente", icon: Bot },
+// Filas del mockup "agenda de hoy" — contenido de EJEMPLO fijo para
+// ilustrar el producto en la landing pública (no son datos reales de
+// ningún usuario ni materia; nombres genéricos y creíbles). Íconos
+// SVG reales exportados del diseño de Figma (no redibujados a mano).
+const AGENDA_EJEMPLO = [
+  { icon: "calendar", label: "Materia", valor: "Introducción a HTML, CSS y JS" },
+  { icon: "layers", label: "Unidad", valor: "Unidad 2. HTML" },
+  { icon: "crosshairs", label: "Tema de hoy", valor: "Etiquetas y estructura HTML", acento: true },
+  { icon: "pencil", label: "Actividad planeada", valor: "Análisis de la anatomía de las etiquetas HTML", acento: true },
 ]
+
+const MATERIALES_EJEMPLO = ["Laptop", "Presentación (PPTX)", "Hojas de ejercicios 1, 2 y 3 de unidad 2"]
+
+function IconoFila({ nombre, acento }) {
+  return (
+    <span
+      className={`flex size-12 shrink-0 items-center justify-center rounded-[10px] border ${
+        acento ? "border-accent/30 bg-accent/10" : "border-primary/20 bg-primary/10"
+      }`}
+    >
+      <img src={`/icons/landing/${nombre}.svg`} alt="" className={`size-6 ${acento ? "opacity-80" : ""}`} />
+    </span>
+  )
+}
 
 export default function Hero() {
   const { eyebrow, title, subtitle, cta, ctaSecondary } = config.landing.hero
@@ -23,106 +42,82 @@ export default function Hero() {
         <div className="absolute right-[8%] top-[3rem] size-[360px] rounded-full bg-accent/15 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-4xl px-4 pt-20 pb-10 text-center md:pt-28">
-        {eyebrow && (
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-base-300 bg-base-100/70 px-3 py-1 text-xs font-medium text-base-content/70 backdrop-blur">
-            <Sparkles className="size-3.5 text-primary" />
-            {eyebrow}
-          </div>
-        )}
-
-        <h1 className="text-balance text-4xl font-bold tracking-tight md:text-6xl">{title}</h1>
-
-        <p className="mx-auto mt-6 max-w-2xl text-balance text-lg leading-relaxed text-base-content/70 md:text-xl">
-          {subtitle}
-        </p>
-
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <Link href={cta.href} className="btn btn-accent btn-lg">
-            {cta.label}
-            <ArrowRight className="size-4" />
-          </Link>
-          {ctaSecondary && (
-            <Link href={ctaSecondary.href} className="btn btn-ghost btn-lg">
-              {ctaSecondary.label}
-            </Link>
+      <div className="mx-auto grid max-w-6xl gap-12 px-4 pb-16 pt-16 md:grid-cols-2 md:items-center md:pt-20 md:pb-24">
+        {/* Columna izquierda: mensaje + CTA */}
+        <div>
+          {eyebrow && (
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-base-300 bg-base-100/70 px-3 py-1.5 text-xs font-semibold text-primary backdrop-blur">
+              <Sparkles className="size-3.5" />
+              {eyebrow.toUpperCase()}
+            </div>
           )}
+
+          <h1 className="font-satoshi text-balance text-5xl font-black leading-[0.98] tracking-tight text-base-content md:text-7xl">
+            {title}
+          </h1>
+
+          <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-base-content/60 md:text-xl">
+            {subtitle}
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Link href={cta.href} className="btn btn-primary btn-lg rounded-[5px]">
+              {cta.label}
+            </Link>
+            {ctaSecondary && (
+              <Link
+                href={ctaSecondary.href}
+                className="flex items-center gap-1 text-lg font-semibold text-primary hover:underline"
+              >
+                {ctaSecondary.label}
+                <ArrowRight className="size-4" />
+              </Link>
+            )}
+          </div>
         </div>
 
-        <p className="mt-4 text-sm text-base-content/50">Gratis para empezar · sin tarjeta</p>
-      </div>
-
-      {/* Mockup de producto (navegador con la app dentro) */}
-      <div className="mx-auto max-w-5xl px-4 pb-20 md:pb-28">
-        <div className="mockup-browser border border-base-300 bg-base-100 shadow-2xl shadow-primary/10">
-          <div className="mockup-browser-toolbar">
-            <div className="input border border-base-300 text-base-content/50">
-              https://{config.app.domain}/dashboard
-            </div>
-          </div>
-
-          <div className="grid gap-4 border-t border-base-200 bg-base-200 p-4 sm:grid-cols-[168px_1fr] sm:p-6">
-            {/* Sidebar */}
-            <aside className="hidden rounded-xl bg-base-100 p-3 sm:block">
-              <div className="mb-3 flex items-center gap-2 px-1">
-                <span className="inline-flex size-6 items-center justify-center rounded-md bg-primary text-primary-content">
-                  <svg viewBox="0 0 24 24" fill="none" className="size-[62%]">
-                    <path
-                      d="M3.5 12 H7 L10.5 18 L15.5 6 H20.5"
-                      stroke="currentColor"
-                      strokeWidth="2.4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+        {/* Columna derecha: mockup "agenda de hoy" */}
+        <div className="rounded-[10px] border-2 border-base-300 bg-base-100 p-7 shadow-2xl shadow-primary/10">
+          <div className="divide-y divide-base-200">
+            {/* Fila Hoy + Horario (única fila de dos bloques) */}
+            <div className="flex items-start justify-between gap-3 pb-4">
+              <div className="flex items-start gap-3.5">
+                <IconoFila nombre="calendar" />
+                <div>
+                  <p className="text-2xl font-black text-base-content">Hoy</p>
+                  <p className="text-sm font-semibold text-base-content/60">21 de mayo de 2025</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3.5">
+                <span className="flex size-12 shrink-0 items-center justify-center">
+                  <img src="/icons/landing/clock.svg" alt="" className="size-8" />
                 </span>
-                <span className="text-sm font-bold">{config.brand.logoText}</span>
-              </div>
-              <ul className="space-y-1">
-                {MOCK_NAV.map(({ label, icon: Icon, active }) => (
-                  <li
-                    key={label}
-                    className={
-                      "flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm " +
-                      (active
-                        ? "bg-primary/10 font-medium text-primary"
-                        : "text-base-content/60")
-                    }
-                  >
-                    <Icon className="size-4" />
-                    {label}
-                  </li>
-                ))}
-              </ul>
-            </aside>
-
-            {/* Contenido */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="h-6 w-40 rounded-md bg-base-300" />
-                <span className="btn btn-primary btn-sm pointer-events-none">Nuevo</span>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-3">
-                {[0, 1, 2].map((i) => (
-                  <div key={i} className="rounded-xl border border-base-200 bg-base-100 p-4">
-                    <div className="mb-3 size-8 rounded-lg bg-primary/15" />
-                    <div className="mb-2 h-3 w-3/4 rounded bg-base-300" />
-                    <div className="h-3 w-1/2 rounded bg-base-200" />
-                  </div>
-                ))}
-              </div>
-
-              <div className="rounded-xl border border-base-200 bg-base-100 p-4">
-                <div className="flex items-center gap-2 text-xs font-medium text-base-content/50">
-                  <Sparkles className="size-3.5 text-accent" />
-                  Asistente AI
+                <div className="text-right">
+                  <p className="text-lg font-bold text-base-content">9:00 – 11:00</p>
+                  <p className="text-sm font-semibold text-base-content/60">Horario de clase</p>
                 </div>
-                <div className="mt-3 space-y-2">
-                  <div className="h-3 w-full rounded bg-base-200" />
-                  <div className="h-3 w-5/6 rounded bg-base-200" />
-                  <div className="h-3 w-2/3 rounded bg-base-200" />
+              </div>
+            </div>
+
+            {AGENDA_EJEMPLO.map(({ icon, label, valor, acento }) => (
+              <div key={label} className="flex items-start gap-3.5 py-4">
+                <IconoFila nombre={icon} acento={acento} />
+                <div className="min-w-0">
+                  <p className="text-base font-medium text-base-content/60">{label}</p>
+                  <p className="text-sm font-semibold text-base-content">{valor}</p>
                 </div>
+              </div>
+            ))}
+
+            <div className="flex items-start gap-3.5 pt-4">
+              <IconoFila nombre="paper" acento />
+              <div className="min-w-0">
+                <p className="text-base font-medium text-base-content/60">Materiales de hoy</p>
+                <ul className="mt-1 list-disc space-y-0.5 pl-5 text-sm font-semibold text-base-content marker:text-base-content/40">
+                  {MATERIALES_EJEMPLO.map((m) => (
+                    <li key={m}>{m}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

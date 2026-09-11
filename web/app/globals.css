@@ -2,21 +2,22 @@
 @plugin "daisyui";
 
 /* ============================================================
-   Tema de marca Vibecoding (Flat Design)
-   Paleta: azul cielo (primary/accent/CTA) + slate (neutral).
-   El primary real lo inyecta config.brand.primary desde layout.js
-   como --color-primary inline (config = fuente de verdad).
+   Tema de marca "¿Qué toca hoy?" (Flat Design)
+   Paleta: azul pizarrón (primary) + naranja (accent, reservado para
+   acciones de IA) + slate (neutral). Coincide con config.brand.primary
+   (#2563EB) — antes este archivo tenía el azul-cielo genérico del
+   boilerplate (#0ea5e9) sin actualizar tras el rebrand.
    ============================================================ */
 @plugin "daisyui/theme" {
   name: "vibecoding";
   default: true;
   prefersdark: false;
   color-scheme: light;
-  --color-primary: #0ea5e9;
+  --color-primary: #2563eb;
   --color-primary-content: #ffffff;
-  --color-secondary: #0284c7;
+  --color-secondary: #1d4ed8;
   --color-secondary-content: #ffffff;
-  --color-accent: #0ea5e9;
+  --color-accent: #f97316;
   --color-accent-content: #ffffff;
   --color-neutral: #1e293b;
   --color-neutral-content: #f8fafc;
@@ -24,7 +25,7 @@
   --color-base-200: #f8fafc;
   --color-base-300: #e2e8f0;
   --color-base-content: #1e293b;
-  --color-info: #0ea5e9;
+  --color-info: #2563eb;
   --color-success: #16a34a;
   --color-warning: #f59e0b;
   --color-error: #dc2626;
@@ -42,7 +43,7 @@
   --color-primary-content: #0f172a;
   --color-secondary: #0ea5e9;
   --color-secondary-content: #0f172a;
-  --color-accent: #38bdf8;
+  --color-accent: #fb923c;
   --color-accent-content: #0f172a;
   --color-neutral: #e2e8f0;
   --color-neutral-content: #0f172a;
@@ -76,6 +77,13 @@ h3,
 h4,
 .font-heading {
   font-family: var(--font-space-grotesk, var(--font-dm-sans, ui-sans-serif, system-ui, sans-serif));
+}
+
+/* Satoshi (Fontshare, cargada en app/layout.js) — solo logo + H1 del
+   hero de landing, según el diseño de Figma. Fallback a Space Grotesk
+   si el link externo no cargó. */
+.font-satoshi {
+  font-family: "Satoshi", var(--font-space-grotesk, ui-sans-serif, system-ui, sans-serif);
 }
 
 /* ============================================================

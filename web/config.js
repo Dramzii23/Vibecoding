@@ -29,6 +29,9 @@ const config = {
     locale: "es", // "es" | "en"
     // URL pública: usa NEXT_PUBLIC_APP_URL en .env. En este config solo definimos el default.
     defaultUrl: "http://localhost:3000",
+    // Institución que despliega la app para sus docentes — branding fijo,
+    // no un dato por usuario. Se muestra en el sidebar de la zona privada.
+    institucion: "Facultad de Diseño",
   },
 
   // -----------------------------------------------------------
@@ -38,7 +41,7 @@ const config = {
     // Color primario en HEX. DaisyUI lo aplica como --color-primary via theme.
     primary: "#2563EB", // azul pizarrón: orden, confianza y foco académico
     // Logo: puede ser texto o ruta a /public/logo.svg
-    logoText: "Vibecoding",
+    logoText: "¿Qué toca hoy?",
     logoSrc: null,
     // Estilo del bordeado global (DaisyUI usa esto para botones, cards)
     radius: "1rem",
@@ -58,6 +61,7 @@ const config = {
     pricing: true, // Muestra la sección de precios en la landing (vitrina; el cobro real es `paypal`)
     paypal: false, // Botón PayPal.me en Pricing (configura `payment` abajo)
     adminPanel: true, // Panel /admin de leads (waitlist) — requiere ADMIN_PASSWORD en .env.local
+    cartaDescriptivaIA: true, // Importador de carta descriptiva por IA en /materias — requiere OPENAI_API_KEY
   },
 
   // -----------------------------------------------------------
@@ -76,6 +80,7 @@ const config = {
   ai: {
     chatModel: "gpt-4o-mini", // default barato y rápido
     structuredModel: "gpt-4o-mini",
+    pdfModel: "gpt-4o-mini", // interpreta el PDF de la carta descriptiva con visión (no solo texto) — súbelo a gpt-4o si necesitas más fidelidad en documentos largos/complejos
     agentModel: "gpt-4o", // los agentes razonan mejor con full gpt-4o
     maxTokens: 1500,
     temperature: 0.4,

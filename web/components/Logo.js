@@ -1,20 +1,13 @@
-// Marca de Vibecoding: una "V" con forma de símbolo de raíz cuadrada (√).
-// Cuadrado redondeado con el color primary y el trazo en blanco.
+// Marca de "¿Qué toca hoy?": cuadrado redondeado bg-primary con el
+// ícono de libro abierto (entypo:open-book) tal cual se definió en
+// el diseño de Figma — asset SVG real, no redibujado a mano.
 export default function Logo({ className = "size-7" }) {
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-lg bg-primary text-primary-content ${className}`}
+      className={`inline-flex items-center justify-center rounded-[10px] bg-primary p-[16.6%] ${className}`}
       aria-hidden
     >
-      <svg viewBox="0 0 24 24" fill="none" className="size-[62%]">
-        <path
-          d="M3.5 12 H7 L10.5 18 L15.5 6 H20.5"
-          stroke="currentColor"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <img src="/icons/landing/logo-book.svg" alt="" className="size-full brightness-0 invert" />
     </span>
   )
 }

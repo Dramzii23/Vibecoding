@@ -5,8 +5,8 @@ import Logo from "@/components/Logo"
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-base-200 bg-base-100/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+    <header className="sticky top-0 z-40 w-full border-b border-base-200 bg-base-100/90 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
         <div className="flex items-center gap-2">
           {/* Menú móvil */}
           <div className="dropdown md:hidden">
@@ -25,18 +25,20 @@ export default function Navbar() {
             </ul>
           </div>
 
-          <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
-            <Logo className="size-7" />
-            {config.brand.logoText}
+          <Link href="/" className="flex items-center gap-2.5">
+            <Logo className="size-9 md:size-11" />
+            <span className="font-satoshi text-xl font-bold tracking-tight text-primary md:text-2xl">
+              {config.brand.logoText}
+            </span>
           </Link>
         </div>
 
-        <ul className="hidden items-center gap-6 md:flex">
+        <ul className="hidden items-center gap-8 md:flex">
           {config.landing.nav.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="text-sm text-base-content/70 transition hover:text-base-content"
+                className="font-satoshi text-base font-bold text-base-content transition hover:text-primary"
               >
                 {item.label}
               </Link>
