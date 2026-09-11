@@ -17,7 +17,7 @@ import config from "@/config"
 
 // Rutas que requieren sesión. Todo lo que cuelga de /(app) en realidad,
 // pero el middleware no ve grupos de rutas, así que listamos prefijos.
-const PROTECTED_PREFIXES = ["/dashboard", "/account", "/chat"]
+const PROTECTED_PREFIXES = ["/dashboard", "/account", "/chat", "/materias", "/catalogos", "/superadmin"]
 
 export async function updateSession(request) {
   let response = NextResponse.next({ request })

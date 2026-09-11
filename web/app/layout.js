@@ -55,6 +55,15 @@ export default function RootLayout({ children }) {
       className={`${spaceGrotesk.variable} ${dmSans.variable}`}
       style={{ "--color-primary": config.brand.primary }}
     >
+      <head>
+        {/* Satoshi (Fontshare) — solo para el logo y el H1 del hero de
+            landing, según el diseño de Figma. El resto del sitio sigue
+            en Space Grotesk/DM Sans (next/font, ya cargadas arriba). */}
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="bg-base-100 text-base-content">
         <script
           dangerouslySetInnerHTML={{

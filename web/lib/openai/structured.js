@@ -11,8 +11,12 @@ import { zodResponseFormat } from "openai/helpers/zod"
 import { openai } from "./client"
 import config from "@/config"
 
-// schema: ZodSchema · prompt: string · model: opcional (override)
-// Devuelve el objeto ya validado contra `schema`.
+// schema: ZodSchema · prompt: string O array de content parts (ej.
+// [{type:"text",...}, {type:"file",...}] — usado por
+// cartas-descriptivas/route.js para adjuntar el PDF completo) ·
+// model: opcional (override). Devuelve el objeto ya validado contra
+// `schema`. Un `prompt` string se comporta exactamente igual que
+// antes; un array se pasa tal cual como `content` del mensaje.
 export async function generateObject(schema, prompt, model = config.ai.structuredModel) {
   const completion = await openai.beta.chat.completions.parse({
     model,
